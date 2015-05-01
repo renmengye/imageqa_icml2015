@@ -1,0 +1,39 @@
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2355.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2355: what is the colour of roll of tissue paper ?\\
+        Ground truth: white\\
+2-CNN-LSTM: \textcolor{green}{white (0.4944) }\\
+BLIND-LSTM: \textcolor{red}{red (0.1887) }
+\\
+Easy because toilet tissue paper are always white}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/1466.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1466: what is on the night stand ?\\
+        Ground truth: paper\\
+2-CNN-LSTM: \textcolor{red}{lamp (0.8925) }\\
+BLIND-LSTM: \textcolor{red}{lamp (0.8852) }
+\\
+Object is too small to focus}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2010.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2010: what is to the right of the table ?\\
+        Ground truth: sink\\
+2-CNN-LSTM: \textcolor{red}{chair (0.7257) }\\
+BLIND-LSTM: \textcolor{red}{chair (0.3147) }
+\\
+Too many cluttered objects}
+\\
+\end{array}$
+\caption{The variety of difficulty levels in DAQUAR}
+\end{figure*}

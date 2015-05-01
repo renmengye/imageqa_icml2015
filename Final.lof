@@ -1,0 +1,25 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An artificial neuron\relax }}{5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The sigmoid function\relax }}{6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces A feedforward net with one hidden layer (adapted from \cite {ffnn})\relax }}{7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A convolutional neural net \cite {cnn}\relax }}{9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Automatically learned low-level image filters \cite {krizhevsky12}\relax }}{10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces A recurrent neuron with a feedback loop\relax }}{10}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Long short-term memory\relax }}{11}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Back-propagation through time\relax }}{12}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Various types of difficult questions in the DAQUAR dataset\relax }}{15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Image-word model and blind model\relax }}{19}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Bidirectional image-word model and blind model\relax }}{20}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Direct comparison between the image-word model and the blind model.\relax }}{21}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example: ``A man is riding a \textbf {horse}'' $=>$ ``\textbf {What} is \textbf {the} man riding?''\relax }}{30}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Counting ability of the image-word model: the outputs are strongly dependent on the types of object asked.\relax }}{31}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Counting ability of the image-word model: the model outputs ``two'' when it is not certain about the objects.\relax }}{31}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Colour recognition ability of the image-word model: the outputs are strongly dependent on the types of objects described in the question. Even worse, since the questions are the same, the output probability are the same regardless of the images. The output class is consistent with the blind model.\relax }}{32}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Object recognition ability of image-word model: when there is less clue from the text, the image-word model seems to ouput better answers. But it still fails on many situations, so the gain is still mainly from language understanding.\relax }}{32}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

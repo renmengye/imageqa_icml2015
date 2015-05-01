@@ -1,0 +1,64 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {1.1}Overview of the thesis}{4}
+\contentsline {chapter}{\numberline {2}Background}{5}
+\contentsline {section}{\numberline {2.1}Neural networks}{5}
+\contentsline {subsection}{\numberline {2.1.1}Feedforward neural networks}{6}
+\contentsline {subsection}{\numberline {2.1.2}Error functions}{7}
+\contentsline {subsection}{\numberline {2.1.3}Training neural networks}{8}
+\contentsline {subsection}{\numberline {2.1.4}Convolutional neural networks (CNNs)}{9}
+\contentsline {subsection}{\numberline {2.1.5}Recurrent neural networks (RNNs)}{10}
+\contentsline {subsection}{\numberline {2.1.6}Long short-term memory (LSTM)}{10}
+\contentsline {subsection}{\numberline {2.1.7}Training of RNNs}{11}
+\contentsline {section}{\numberline {2.2}Word embedding}{12}
+\contentsline {subsection}{\numberline {2.2.1}Skip-gram embedding model}{13}
+\contentsline {section}{\numberline {2.3}Jointly learn image and word}{13}
+\contentsline {section}{\numberline {2.4}Image-based question answering}{14}
+\contentsline {subsection}{\numberline {2.4.1}DAQUAR dataset}{14}
+\contentsline {subsection}{\numberline {2.4.2}Previous attempt}{16}
+\contentsline {chapter}{\numberline {3}Methods and Results}{17}
+\contentsline {section}{\numberline {3.1}Problem restatement}{17}
+\contentsline {section}{\numberline {3.2}Our models}{17}
+\contentsline {subsection}{\numberline {3.2.1}GUESS model}{17}
+\contentsline {subsection}{\numberline {3.2.2}BOW model}{17}
+\contentsline {subsection}{\numberline {3.2.3}LSTM sentence model}{18}
+\contentsline {subsection}{\numberline {3.2.4}Image-word model}{18}
+\contentsline {subsection}{\numberline {3.2.5}Bidirectional image-word model}{19}
+\contentsline {subsection}{\numberline {3.2.6}Image-word ranking model}{20}
+\contentsline {subsection}{\numberline {3.2.7}DAQUAR results}{21}
+\contentsline {section}{\numberline {3.3}COCO-QA dataset}{21}
+\contentsline {subsection}{\numberline {3.3.1}Question conversion algorithms}{22}
+\contentsline {subsubsection}{Object-type questions}{22}
+\contentsline {subsubsection}{Number-type questions}{24}
+\contentsline {subsubsection}{Colour-type questions}{26}
+\contentsline {subsection}{\numberline {3.3.2}Reducing rare answers}{26}
+\contentsline {subsection}{\numberline {3.3.3}Reducing common answers}{27}
+\contentsline {subsection}{\numberline {3.3.4}Question statistics}{27}
+\contentsline {subsection}{\numberline {3.3.5}Question quality}{28}
+\contentsline {subsection}{\numberline {3.3.6}Learning results}{29}
+\contentsline {chapter}{\numberline {4}Discussion}{33}
+\contentsline {section}{\numberline {4.1}Model selection}{33}
+\contentsline {subsection}{\numberline {4.1.1}LSTM sentence model}{33}
+\contentsline {subsection}{\numberline {4.1.2}Word embedding}{34}
+\contentsline {subsection}{\numberline {4.1.3}Single direction or bi-direction}{34}
+\contentsline {subsection}{\numberline {4.1.4}Softmax cross entropy or ranking loss}{34}
+\contentsline {section}{\numberline {4.2}Dataset selection}{34}
+\contentsline {section}{\numberline {4.3}Visual and semantic knowledge}{35}
+\contentsline {chapter}{\numberline {5}Future Work}{37}
+\contentsline {section}{\numberline {5.1}Exploration of current models}{37}
+\contentsline {section}{\numberline {5.2}Visual attention model}{38}
+\contentsline {section}{\numberline {5.3}Better question generation algorithms}{38}
+\contentsline {section}{\numberline {5.4}Longer answers and free-form answers}{39}
+\contentsline {chapter}{\numberline {6}Conclusion}{41}
+\contentsline {chapter}{\numberline {A}Neural networks training techniques}{43}
+\contentsline {section}{\numberline {A.1}Momentum}{43}
+\contentsline {section}{\numberline {A.2}Weight regularization}{43}
+\contentsline {section}{\numberline {A.3}Dropout}{44}
+\contentsline {section}{\numberline {A.4}Gradient control in training RNNs}{44}
+\contentsline {subsection}{\numberline {A.4.1}Gradient clipping}{44}
+\contentsline {subsection}{\numberline {A.4.2}Weight clipping}{44}
+\contentsline {section}{\numberline {A.5}Dropout in RNNs}{45}
+\contentsline {chapter}{\numberline {B}Model training details}{47}
+\contentsline {section}{\numberline {B.1}Image-word model}{47}
+\contentsline {section}{\numberline {B.2}Blind model}{48}
+\contentsline {section}{\numberline {B.3}Image-word ranking model}{48}
+\contentsline {section}{\numberline {B.4}Bidirectional model}{48}

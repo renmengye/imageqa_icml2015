@@ -1,0 +1,253 @@
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/212.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q212: what is the object close to the wall right and left of the cabinet ?\\
+        Ground truth: television\\
+2-CNN-LSTM: \textcolor{green}{television (0.3950) }\\
+BLIND-LSTM: \textcolor{red}{window (0.3987) }
+\\
+Complex question and recognized correct object}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/464.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q464: what is the object close to the floor left of the wall ?\\
+        Ground truth: toilet\\
+2-CNN-LSTM: \textcolor{green}{toilet (0.2292) }\\
+BLIND-LSTM: \textcolor{red}{cabinet (0.1918) }
+\\
+Small object}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/585.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q585: what is the object on the chair ?\\
+        Ground truth: pillow\\
+2-CNN-LSTM: \textcolor{green}{pillow (0.6475) }\\
+BLIND-LSTM: \textcolor{red}{clothes (0.3973) }
+\\
+Location of object}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/3266.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q3266: what is to the left of the door way ?\\
+        Ground truth: lamp\\
+2-CNN-LSTM: \textcolor{green}{lamp (0.3301) }\\
+BLIND-LSTM: \textcolor{red}{shelves (0.1531) }
+\\
+Small object}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2346.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2346: what is to left of door ?\\
+        Ground truth: sink\\
+2-CNN-LSTM: \textcolor{green}{sink (0.1992) }\\
+BLIND-LSTM: \textcolor{red}{door (0.1855) }
+\\
+Could have been ``toilet'' if the model does know left or right}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/232.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q232: what is the largest object ?\\
+        Ground truth: sofa\\
+2-CNN-LSTM: \textcolor{green}{sofa (0.6274) }\\
+BLIND-LSTM: \textcolor{red}{bed (0.3276) }
+\\
+Image features are useful mostly when asking about the largest object}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2136.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2136: what is right of table ?\\
+        Ground truth: shelves\\
+2-CNN-LSTM: \textcolor{green}{shelves (0.2780) }\\
+BLIND-LSTM: \textcolor{green}{shelves (0.2000) }
+\\
+Left/right is good}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/1426.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1426: what is on the right side table ?\\
+        Ground truth: television\\
+2-CNN-LSTM: \textcolor{green}{television (0.2888) }\\
+BLIND-LSTM: \textcolor{green}{television (0.1384) }
+\\
+Small object compared to bed and shelf. But ``on the table'' gives some hint}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/969.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q969: what is on the left side of the table ?\\
+        Ground truth: refridgerator\\
+2-CNN-LSTM: \textcolor{green}{refridgerator (0.7176) }\\
+BLIND-LSTM: \textcolor{red}{chair (0.2727) }
+\\
+Left/right image feature helps}
+\\
+\end{array}$
+\caption{DAQUAR Object Questions}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/705.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q705: what is the big object on the big dark brown dresser ?\\
+        Ground truth: television\\
+2-CNN-LSTM: \textcolor{red}{picture (0.2295) }\\
+BLIND-LSTM: \textcolor{red}{refridgerator (0.4281) }
+\\
+Fail and the blind model did very good reasoning}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/800.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q800: what is biggest black object ?\\
+        Ground truth: sofa\\
+2-CNN-LSTM: \textcolor{red}{television (0.5182) }\\
+BLIND-LSTM: \textcolor{green}{sofa (0.4287) }
+\\
+Probably thinks the big picture hanging on the wall as television}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/876.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q876: what is on the table ?\\
+        Ground truth: books\\
+2-CNN-LSTM: \textcolor{red}{lamp (0.3294) }\\
+BLIND-LSTM: \textcolor{red}{lamp (0.2176) }
+\\
+Books are likely to be on the table}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/31.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q31: what is on the wall above the night stand ?\\
+        Ground truth: picture\\
+2-CNN-LSTM: \textcolor{green}{picture (0.2716) }\\
+BLIND-LSTM: \textcolor{green}{picture (0.4401) }
+\\
+``on the wall'' seems to be strong enough signal}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/1231.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1231: what is on the left side of the bed ?\\
+        Ground truth: night\_stand\\
+2-CNN-LSTM: \textcolor{green}{night\_stand (0.3897) }\\
+BLIND-LSTM: \textcolor{green}{night\_stand (0.2572) }
+\\
+Nightstands are likely to be beside the bed}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2881.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2881: what is on the floor ?\\
+        Ground truth: floor\_mat\\
+2-CNN-LSTM: \textcolor{green}{floor\_mat (0.4828) }\\
+BLIND-LSTM: \textcolor{green}{floor\_mat (0.5276) }
+\\
+Floormats are always on the floor}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/3278.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q3278: what are around the dining table ?\\
+        Ground truth: chair\\
+2-CNN-LSTM: \textcolor{green}{chair (0.9625) }\\
+BLIND-LSTM: \textcolor{green}{chair (0.9894) }
+\\
+Chairs are always around the dining table}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/1466.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1466: what is on the night stand ?\\
+        Ground truth: paper\\
+2-CNN-LSTM: \textcolor{red}{lamp (0.8925) }\\
+BLIND-LSTM: \textcolor{red}{lamp (0.8852) }
+\\
+Very hard question and ``lamp'' is a more reasonable answer}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2010.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2010: what is to the right of the table ?\\
+        Ground truth: sink\\
+2-CNN-LSTM: \textcolor{red}{chair (0.7257) }\\
+BLIND-LSTM: \textcolor{red}{chair (0.3147) }
+\\
+Very hard question that there are too many cluttered objects}
+\\
+\end{array}$
+\caption{DAQUAR Object Questions}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2047.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2047: what is the object is ?\\
+        Ground truth: shelves\\
+2-CNN-LSTM: \textcolor{red}{sofa (0.3215) }\\
+BLIND-LSTM: \textcolor{red}{chair (0.0304) }
+\\
+Not very clear why CNN fails on this}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/2731.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2731: what is found on the floor ?\\
+        Ground truth: bed\\
+2-CNN-LSTM: \textcolor{red}{floor\_mat (0.5103) }\\
+BLIND-LSTM: \textcolor{red}{floor\_mat (0.7502) }
+\\
+CNN doesn't differ too much from blind and image features are not more useful than ``common-sense''}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{daquar_img/241.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q241: what is the largest object ?\\
+        Ground truth: sofa\\
+2-CNN-LSTM: \textcolor{red}{table (0.6090) }\\
+BLIND-LSTM: \textcolor{red}{bed (0.3276) }
+\\
+Again the model fail}
+\\
+\end{array}$
+\caption{DAQUAR Object Questions}
+\end{figure*}

@@ -1,0 +1,40 @@
+\chapter{Future Work}
+\label{future}
+
+\section{Exploration of current models}
+Although we have presented a functional model on the image QA task, we acknowledge that due to the time constraints of this thesis, there remain a number of alternatives on the current models that are unexplored. We list a few modifications can be experimented in the future:
+
+\begin{enumerate}
+\item Modification on CNN\\
+In all of our experiments, we only tried the last hidden layer of the CNN trained on object recognition as our frozen image features. We did not let back-propagation occur in the CNN because we believed that DAQUAR dataset is too small to fine-tune the CNN. However, with 20 times more data as in the case of COCO-QA dataset, fine-tuning the CNN becomes possible. It is also worth experimenting whether the last hidden layer is really the most useful image features for our task. In a recent work \cite{yosinski14}, the authors show how the images features transition from general purpose to problem specific in a CNN. As discussed in the last chapter, the image features for the same class of object may be too similar to discriminate against different numbers and colours. Following the same methodology in \cite{yosinski14}, we can vary our model by using frozen lower layers of the CNN, and fine-tuned upper layers of the CNN.
+
+\item Image features on every timestep\\
+One of the problems that we are encountering is that the image features are ``forgotten'' as the LSTM is fed with too much word semantic information. One way to mitigate this is through biasing the word vectors at every timestep, so that the entire sentence vector will be biased by the image input.
+
+\item Different image projection layers for the first and last timestep\\
+In the bi-directional image-word model, we used same linear map to transform the image features into the joint visual-semantic embedding space. Alternatively, we can use different projection layers. The intuition is that the model will extract different information from the model when it does not know about the question and when it has seen the question.  
+
+\end{enumerate}
+
+\section{Visual attention model}
+As people are answering a question on some picture, they often skim through the entire picture and focus on the point of interest that is closely related to the question. For example, a question like ``what is on the table?'' expects them to first locate the object ``table'' and then look above the object. Knowing where to look at is very important in this task. And as shown in the DAQUAR dataset, there are many questions that do not focus on the main object in the image. THe experimental results suggest that there is an acute need for the model to learn to capture visual details. Therefore we believe that building an alignment between words and the attention of the image will help the model achieve better performance.
+
+Fortunately we can borrow the recent breakthroughs in attention modelling \cite{xu15} to help us on this task. The input of the attention model is the convolutional layer features in the CNN \cite{simonyan14}, rather than the fully connected layer. In this way, it will preserve the local information to a larger degree. The attention function gives a probability distribution (visual attention) over the entire image at every time step. The visual attention, the image and the question word are input to the recurrent neural network, and the output of the network forms a feedback loop to the attention function through a multilayer feedforward network. The attention model has the state-of-the-art scores on image description generation, and we believe that incorporation of this model will likely boost our answer accuracy.
+
+\section{Better question generation algorithms}
+We have presented our proposed algoritms that generate three types of questions from sentences. As discuessed before, there are mainly two sources of errors. First is caused by incorrect sentence stryctyres produced by the Stanford parser and second is caused by our algorithms. We list the following future work items to improve the quality of our question generation algorithms.
+
+\begin{enumerate}
+\item Sentence fragments\\
+Many descriptions in MS-COCO are not complete sentences. For example ``A bathroom with toilet'' or ``A man riding a bike''. Future work is needed to fill in missing verbs in those incomplete sentences. More importantly, the Stanford parser erroreously tags nouns as verbs in many sentence fragments. For example, the word ``sink'' is tagged as verb in a sentence fragment such ``A bathroom sink (n.)'', and the sentence fragment will be converted to a question ``what sink (v.) ?''.
+\item Split clauses\\
+Just like the way we separate composite sentences that have conjunction word ``and'', we can also separate clauses from the original sentence. As explained previously, shorter sentence will likely to be converted the good questions.
+\item Identify phrasemes as one answer entity\\
+Sometimes multiple words represent a single entity, also called phrasemes. For example, ``fire hydrant'' should be regarded as one single word in the answer. Otherwise, the answer will be ``hydrant'' alone.
+\item Better quality metric\\
+As mentioned before, it is very hard to evaluate the quality of auto-genereated questions. In fact, automatic question generation could be an interesting research topic on its own. It is possible to design some quality metric similar to BLEU \cite{bleu}, which compares the similarity between auto-generated questions and human generated questions.
+\end{enumerate}
+It is also interesting to investigate how does the quality of the questions affect the performance of the models. For humans, asking a nonsensical question would certainly not lead to the ``correct'' answers but for machines, since they are trained on this dataset that contains certain proportion of nonsensical questions, maybe they can ``learn'' a way to output the ``correct'' answer.
+
+\section{Longer answers and free-form answers}
+Up until now we have assumed that there are only one-word answers, but ideally we would like to consider longer answers as well. Inspired by \cite{sutskever14}, we could possibly extend the length of our answers by using an RNN decoder such as LSTM. We can borrow the idea in \cite{kiros14b}, to either have a template to generate a word in certain word category at a time, or generate a list of free-form answer candidates and select the best candidate. It should be noted that free-form answers also need a better quantitative metric to measure answer quality, in term of its accuracy and language soundness. Lastly, this would need a larger varieties of question types for the model to learn variations in language generation. This will be our long-term goal in the image QA research.

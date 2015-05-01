@@ -1,0 +1,434 @@
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2: what is grazing in a grassy area above a body of water ?\\
+        Ground truth: sheep\\
+2-CNN-LSTM: \textcolor{green}{sheep (0.6904) }\\
+CNN-BOW: \textcolor{green}{sheep (0.8393) }\\
+BLIND-LSTM: \textcolor{red}{zebra (0.3476) }\\
+BLIND-BOW: \textcolor{red}{giraffe (0.1673) }
+\\
+Image features are useful}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/85.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q85: what is standing in the sand alone ?\\
+        Ground truth: bird\\
+2-CNN-LSTM: \textcolor{green}{bird (0.6608) }\\
+CNN-BOW: \textcolor{red}{seagull (0.3627) }\\
+BLIND-LSTM: \textcolor{red}{elephant (0.2465) }\\
+BLIND-BOW: \textcolor{red}{elephant (0.1757) }
+\\
+Image features are useful}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/223.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q223: what is the man in a helmet eating ?\\
+        Ground truth: banana\\
+2-CNN-LSTM: \textcolor{green}{banana (0.8961) }\\
+CNN-BOW: \textcolor{green}{banana (0.9729) }\\
+BLIND-LSTM: \textcolor{red}{sandwich (0.2065) }\\
+BLIND-BOW: \textcolor{red}{sandwich (0.1627) }
+\\
+Occluded object are still focusable}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1213.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1213: what is wrapped in packaging paper for shipping ?\\
+        Ground truth: toilet\\
+2-CNN-LSTM: \textcolor{green}{toilet (0.3934) }\\
+CNN-BOW: \textcolor{green}{toilet (0.3243) }\\
+BLIND-LSTM: \textcolor{red}{sandwich (0.2178) }\\
+BLIND-BOW: \textcolor{red}{sandwich (0.2595) }
+\\
+Blind model has no clue from the text alone}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1549.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1549: what are sitting on wood UNK one is cut in half ?\\
+        Ground truth: oranges\\
+2-CNN-LSTM: \textcolor{green}{oranges (0.8196) }\\
+CNN-BOW: \textcolor{green}{oranges (0.3242) }\\
+BLIND-LSTM: \textcolor{red}{pizzas (0.1006) }\\
+BLIND-BOW: \textcolor{red}{plate (0.0424) }
+\\
+Both models know plural for}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2007.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2007: what is sitting next to a cup of coffee ?\\
+        Ground truth: banana\\
+2-CNN-LSTM: \textcolor{green}{banana (0.4267) }\\
+CNN-BOW: \textcolor{green}{banana (0.6397) }\\
+BLIND-LSTM: \textcolor{red}{sandwich (0.1032) }\\
+BLIND-BOW: \textcolor{red}{sandwich (0.1012) }
+\\
+When there are two objects present the model attend to the correct one}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/4974.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q4974: what is the person riding down the street ?\\
+        Ground truth: skateboard\\
+2-CNN-LSTM: \textcolor{green}{skateboard (0.8822) }\\
+CNN-BOW: \textcolor{green}{skateboard (0.4611) }\\
+BLIND-LSTM: \textcolor{red}{motorcycle (0.3368) }\\
+BLIND-BOW: \textcolor{green}{skateboard (0.2380) }
+\\
+Reletively small object to focus on}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/5429.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q5429: what do two women hold with a picture on it ?\\
+        Ground truth: cake\\
+2-CNN-LSTM: \textcolor{green}{cake (0.5611) }\\
+CNN-BOW: \textcolor{red}{laptop (0.1443) }\\
+BLIND-LSTM: \textcolor{red}{umbrellas (0.1567) }\\
+BLIND-BOW: \textcolor{red}{phones (0.1447) }
+\\
+Does not look like a regular cake and the model has to infer from the candles}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1965.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1965: what did people set up on the beach next to blankets ?\\
+        Ground truth: umbrellas\\
+2-CNN-LSTM: \textcolor{green}{umbrellas (0.4768) }\\
+CNN-BOW: \textcolor{red}{umbrella (0.7319) }\\
+BLIND-LSTM: \textcolor{red}{kites (0.1585) }\\
+BLIND-BOW: \textcolor{red}{boat (0.1258) }
+\\
+The CNN-LSTM model knows the plural but CNN-BOW does not}
+\\
+\end{array}$
+\caption{COCO-QA Object Questions}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1966.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1966: what are the man and woman holding up ?\\
+        Ground truth: pizza\\
+2-CNN-LSTM: \textcolor{green}{pizza (0.0775) }\\
+CNN-BOW: \textcolor{red}{pizzas (0.1807) }\\
+BLIND-LSTM: \textcolor{red}{phones (0.1421) }\\
+BLIND-BOW: \textcolor{red}{phones (0.2272) }
+\\
+The CNN-BOW again messed up the counting (mostly of the questions with LSTM win over BOW is on singular/plural)}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2950.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2950: what is the color of the man ?\\
+        Ground truth: black\\
+2-CNN-LSTM: \textcolor{green}{black (0.7063) }\\
+CNN-BOW: \textcolor{green}{black (0.2809) }\\
+BLIND-LSTM: \textcolor{green}{black (0.4410) }\\
+BLIND-BOW: \textcolor{green}{black (0.4541) }
+\\
+LSTM learns to add plural form from the verb tense}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/14930.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q14930: what next to some UNK UNK a lime and a mixed drink ?\\
+        Ground truth: blender\\
+2-CNN-LSTM: \textcolor{green}{blender (0.3763) }\\
+CNN-BOW: \textcolor{red}{plate (0.0927) }\\
+BLIND-LSTM: \textcolor{red}{standing (0.1304) }\\
+BLIND-BOW: \textcolor{red}{plate (0.0410) }
+\\
+Many items present but the LSTM figures out the correct item}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/15178.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q15178: what are two guys riding down the street ?\\
+        Ground truth: motorcycle\\
+2-CNN-LSTM: \textcolor{green}{motorcycle (0.6804) }\\
+CNN-BOW: \textcolor{red}{motorcycles (0.4514) }\\
+BLIND-LSTM: \textcolor{red}{motorcycles (0.2584) }\\
+BLIND-BOW: \textcolor{red}{bikes (0.2329) }
+\\
+From the text alone it is misleading that there might exist multiple motorcycles}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/19533.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q19533: what lays in the bed resting it 's head against a pillow ?\\
+        Ground truth: bear\\
+2-CNN-LSTM: \textcolor{green}{bear (0.3648) }\\
+CNN-BOW: \textcolor{red}{bed (0.3379) }\\
+BLIND-LSTM: \textcolor{red}{dog (0.5108) }\\
+BLIND-BOW: \textcolor{red}{dog (0.6639) }
+\\
+BOW is not a good blend of visual information with the question semantics}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/24952.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q24952: what is the black and white cat wearing ?\\
+        Ground truth: hat\\
+2-CNN-LSTM: \textcolor{green}{hat (0.6349) }\\
+CNN-BOW: \textcolor{red}{cat (0.6880) }\\
+BLIND-LSTM: \textcolor{red}{tie (0.5821) }\\
+BLIND-BOW: \textcolor{red}{tie (0.3385) }
+\\
+BOW is not a good blend of visual information with the question semantics}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/29528.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q29528: what is there filled with sauce covered food ?\\
+        Ground truth: tray\\
+2-CNN-LSTM: \textcolor{green}{tray (0.1637) }\\
+CNN-BOW: \textcolor{red}{pizza (0.1872) }\\
+BLIND-LSTM: \textcolor{red}{plate (0.2158) }\\
+BLIND-BOW: \textcolor{red}{plate (0.2363) }
+\\
+Tray is hard to get}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/30568.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q30568: what stuck in an apple ?\\
+        Ground truth: knife\\
+2-CNN-LSTM: \textcolor{green}{knife (0.2179) }\\
+CNN-BOW: \textcolor{red}{apple (0.2666) }\\
+BLIND-LSTM: \textcolor{red}{bananas (0.0894) }\\
+BLIND-BOW: \textcolor{red}{apple (0.0838) }
+\\
+It is rare to see something stuck into something and here CNN-LSTM win over other 4 models shows a good combination of image and question semantics}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/36019.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q36019: the woman wearing what UNK with a little girl as she played with her stroller UNK which also has an umbrella over it ?\\
+        Ground truth: hat\\
+2-CNN-LSTM: \textcolor{green}{hat (0.4144) }\\
+CNN-BOW: \textcolor{red}{UNK (0.0371) }\\
+BLIND-LSTM: \textcolor{red}{shirt (0.0738) }\\
+BLIND-BOW: \textcolor{red}{plate (0.0401) }
+\\
+LSTM remembers the beginning part of the question although the entire question is very long}
+\\
+\end{array}$
+\caption{COCO-QA Object Questions}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/38613.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q38613: what are the people watching and taking photos ?\\
+        Ground truth: elephants\\
+2-CNN-LSTM: \textcolor{green}{elephants (0.4016) }\\
+CNN-BOW: \textcolor{red}{horses (0.7849) }\\
+BLIND-LSTM: \textcolor{red}{picture (0.1402) }\\
+BLIND-BOW: \textcolor{red}{picture (0.2065) }
+\\
+The object is fairly small to focus on}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/3098.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q3098: what is locked up by some trees ?\\
+        Ground truth: bike\\
+2-CNN-LSTM: \textcolor{red}{bicycle (0.5127) }\\
+CNN-BOW: \textcolor{green}{bike (0.7138) }\\
+BLIND-LSTM: \textcolor{red}{giraffe (0.3866) }\\
+BLIND-BOW: \textcolor{red}{elephant (0.1834) }
+\\
+In many cases where CNN-BOW wins over CNN-LSTM is just some synonyms of answers}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/14124.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q14124: what does the man with no shirt hold ?\\
+        Ground truth: toothbrush\\
+2-CNN-LSTM: \textcolor{red}{phone (0.0897) }\\
+CNN-BOW: \textcolor{green}{toothbrush (0.2189) }\\
+BLIND-LSTM: \textcolor{red}{umbrella (0.1725) }\\
+BLIND-BOW: \textcolor{red}{phone (0.1449) }
+\\
+CNN-LSTM fails on this one because it probably takes in too much textual information}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/14518.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q14518: what will get the lot of use by its owner ?\\
+        Ground truth: mouse\\
+2-CNN-LSTM: \textcolor{red}{toothbrushes (0.1746) }\\
+CNN-BOW: \textcolor{green}{mouse (0.2407) }\\
+BLIND-LSTM: \textcolor{red}{dogs (0.1367) }\\
+BLIND-BOW: \textcolor{red}{elephant (0.0866) }
+\\
+CNN-LSTM fails}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/15499.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q15499: what flies across the blue sky ?\\
+        Ground truth: airplane\\
+2-CNN-LSTM: \textcolor{red}{jet (0.3949) }\\
+CNN-BOW: \textcolor{green}{airplane (0.4655) }\\
+BLIND-LSTM: \textcolor{red}{jet (0.3733) }\\
+BLIND-BOW: \textcolor{red}{plane (0.4066) }
+\\
+Synonyms again}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/37066.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q37066: what is walking on the sandy beach ?\\
+        Ground truth: dog\\
+2-CNN-LSTM: \textcolor{red}{bird (0.3321) }\\
+CNN-BOW: \textcolor{green}{dog (0.5306) }\\
+BLIND-LSTM: \textcolor{red}{bird (0.2449) }\\
+BLIND-BOW: \textcolor{red}{bird (0.2159) }
+\\
+Both objects are present but the LSTM output similar to Blind ones which tells us that it takes more textual information}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/385.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q385: two ladies enjoying what at a roadside stand ?\\
+        Ground truth: dessert\\
+2-CNN-LSTM: \textcolor{red}{bananas (0.4363) }\\
+CNN-BOW: \textcolor{red}{banana (0.9090) }\\
+BLIND-LSTM: \textcolor{red}{fruit (0.0820) }\\
+BLIND-BOW: \textcolor{red}{meal (0.1226) }
+\\
+Yellow food doesn't have to be bananas}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1681.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1681: what is the man in a white shirt UNK striped tie holding ?\\
+        Ground truth: umbrella\\
+2-CNN-LSTM: \textcolor{red}{phone (0.2010) }\\
+CNN-BOW: \textcolor{red}{phone (0.0785) }\\
+BLIND-LSTM: \textcolor{red}{phone (0.1760) }\\
+BLIND-BOW: \textcolor{red}{plate (0.0409) }
+\\
+Overfits to people holding phones}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2608.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2608: the teddy bear on a windowsill holding what ?\\
+        Ground truth: cellphone\\
+2-CNN-LSTM: \textcolor{red}{bear (0.3890) }\\
+CNN-BOW: \textcolor{red}{bear (0.8489) }\\
+BLIND-LSTM: \textcolor{red}{bear (0.2484) }\\
+BLIND-BOW: \textcolor{red}{bear (0.2859) }
+\\
+Hard for a bear to hold cellphone}
+\\
+\end{array}$
+\caption{COCO-QA Object Questions}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/828.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q828: what is towing the heavy load across town ?\\
+        Ground truth: truck\\
+2-CNN-LSTM: \textcolor{red}{train (0.8407) }\\
+CNN-BOW: \textcolor{red}{train (0.5635) }\\
+BLIND-LSTM: \textcolor{green}{truck (0.6577) }\\
+BLIND-BOW: \textcolor{green}{truck (0.4229) }
+\\
+Very long truck looks like a train?}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/33.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q33: what is shining down on the passing airplane ?\\
+        Ground truth: sun\\
+2-CNN-LSTM: \textcolor{red}{airplane (0.4153) }\\
+CNN-BOW: \textcolor{red}{airplane (0.2487) }\\
+BLIND-LSTM: \textcolor{green}{sun (0.3013) }\\
+BLIND-BOW: \textcolor{red}{car (0.1130) }
+\\
+Image provides no extra information and blind LSTM really focuses on the text to get the right answer}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/7231.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q7231: what lined up along one wall with a handicap UNK one at the end ?\\
+        Ground truth: urinals\\
+2-CNN-LSTM: \textcolor{red}{suitcases (0.2665) }\\
+CNN-BOW: \textcolor{red}{luggage (0.0518) }\\
+BLIND-LSTM: \textcolor{green}{urinals (0.0969) }\\
+BLIND-BOW: \textcolor{red}{plate (0.0401) }
+\\
+Interesting that the blind model knows the correct answer whereas the CNN model thinks they are suitcases}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/24432.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q24432: what does the colorful market booth sell to a customer ?\\
+        Ground truth: bananas\\
+2-CNN-LSTM: \textcolor{red}{box (0.1577) }\\
+CNN-BOW: \textcolor{red}{cake (0.1204) }\\
+BLIND-LSTM: \textcolor{green}{bananas (0.0727) }\\
+BLIND-BOW: \textcolor{red}{fruit (0.2503) }
+\\
+Very hard to answer bananas but the blind model made it}
+&
+\end{array}$
+\caption{COCO-QA Object Questions}
+\end{figure*}

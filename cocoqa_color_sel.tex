@@ -1,0 +1,269 @@
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/521.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q521: what is the color of the umbrellas ?\\
+        Ground truth: yellow\\
+2-CNN-LSTM: \textcolor{green}{yellow (0.9376) }\\
+CNN-BOW: \textcolor{green}{yellow (0.3751) }\\
+BLIND-LSTM: \textcolor{red}{red (0.2789) }\\
+BLIND-BOW: \textcolor{red}{blue (0.2287) }
+\\
+CNN tend to focus on bright colors even if they only occupy small portion of the image}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1362.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1362: what is the color of the flowers ?\\
+        Ground truth: red\\
+2-CNN-LSTM: \textcolor{green}{red (0.4641) }\\
+CNN-BOW: \textcolor{green}{red (0.4694) }\\
+BLIND-LSTM: \textcolor{red}{purple (0.6047) }\\
+BLIND-BOW: \textcolor{red}{purple (0.5514) }
+\\
+The blue bench is more obvious to detect but the question is asking about flowers}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2023.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2023: what is the color of the dog ?\\
+        Ground truth: white\\
+2-CNN-LSTM: \textcolor{green}{white (0.6819) }\\
+CNN-BOW: \textcolor{green}{white (0.9388) }\\
+BLIND-LSTM: \textcolor{red}{brown (0.5489) }\\
+BLIND-BOW: \textcolor{red}{brown (0.4795) }
+\\
+Focus on the animal not the pants}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2683.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2683: what is the color of the table ?\\
+        Ground truth: black\\
+2-CNN-LSTM: \textcolor{green}{black (0.7793) }\\
+CNN-BOW: \textcolor{green}{black (0.3785) }\\
+BLIND-LSTM: \textcolor{red}{brown (0.2596) }\\
+BLIND-BOW: \textcolor{red}{white (0.3189) }
+\\
+Attend to background of the image}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/5520.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q5520: what is the color of the banana ?\\
+        Ground truth: green\\
+2-CNN-LSTM: \textcolor{green}{green (0.4476) }\\
+CNN-BOW: \textcolor{green}{green (0.7215) }\\
+BLIND-LSTM: \textcolor{red}{yellow (0.3524) }\\
+BLIND-BOW: \textcolor{red}{yellow (0.3629) }
+\\
+Banana question 1}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/9822.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q9822: what is the color of the bananas ?\\
+        Ground truth: yellow\\
+2-CNN-LSTM: \textcolor{green}{yellow (0.6238) }\\
+CNN-BOW: \textcolor{green}{yellow (0.8101) }\\
+BLIND-LSTM: \textcolor{red}{green (0.3822) }\\
+BLIND-BOW: \textcolor{red}{green (0.3820) }
+\\
+Banana question 2}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/34206.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q34206: what is the color of the bowl ?\\
+        Ground truth: red\\
+2-CNN-LSTM: \textcolor{green}{red (0.4605) }\\
+CNN-BOW: \textcolor{green}{red (0.3050) }\\
+BLIND-LSTM: \textcolor{red}{white (0.1952) }\\
+BLIND-BOW: \textcolor{red}{white (0.4396) }
+\\
+Hard to look for the bowl}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/139.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q139: what is the color of the bear ?\\
+        Ground truth: black\\
+2-CNN-LSTM: \textcolor{green}{black (0.8752) }\\
+CNN-BOW: \textcolor{red}{green (0.3879) }\\
+BLIND-LSTM: \textcolor{red}{brown (0.5518) }\\
+BLIND-BOW: \textcolor{red}{brown (0.6222) }
+\\
+BOW now mistakenly output the dominant color whereas the blind models give a good guess}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1404.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1404: what is the color of the toothbrush ?\\
+        Ground truth: green\\
+2-CNN-LSTM: \textcolor{green}{green (0.4124) }\\
+CNN-BOW: \textcolor{red}{blue (0.3226) }\\
+BLIND-LSTM: \textcolor{red}{blue (0.1879) }\\
+BLIND-BOW: \textcolor{red}{blue (0.2653) }
+\\
+LSTM is more attentive to details of both question and image}
+\\
+\end{array}$
+\caption{COCO-QA Color Questions}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1586.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1586: what is the color of the wheels ?\\
+        Ground truth: yellow\\
+2-CNN-LSTM: \textcolor{green}{yellow (0.4101) }\\
+CNN-BOW: \textcolor{red}{brown (0.4306) }\\
+BLIND-LSTM: \textcolor{red}{orange (0.2095) }\\
+BLIND-BOW: \textcolor{red}{blue (0.1855) }
+\\
+Attend to detail}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/6358.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q6358: what is the color of the boat ?\\
+        Ground truth: red\\
+2-CNN-LSTM: \textcolor{green}{red (0.5345) }\\
+CNN-BOW: \textcolor{red}{blue (0.2879) }\\
+BLIND-LSTM: \textcolor{red}{white (0.1832) }\\
+BLIND-BOW: \textcolor{red}{white (0.2890) }
+\\
+Not the colorful umbrella it is asking}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/10492.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q10492: what is the color of the plane ?\\
+        Ground truth: red\\
+2-CNN-LSTM: \textcolor{green}{red (0.5145) }\\
+CNN-BOW: \textcolor{red}{blue (0.6872) }\\
+BLIND-LSTM: \textcolor{red}{white (0.2756) }\\
+BLIND-BOW: \textcolor{red}{white (0.2865) }
+\\
+BOW goes for the dominant color of the image again}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/1037.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q1037: what is the color of the skies ?\\
+        Ground truth: blue\\
+2-CNN-LSTM: \textcolor{green}{blue (0.4425) }\\
+CNN-BOW: \textcolor{green}{blue (0.6370) }\\
+BLIND-LSTM: \textcolor{green}{blue (0.3826) }\\
+BLIND-BOW: \textcolor{green}{blue (0.4494) }
+\\
+Sometimes colors are easy to guess}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/591.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q591: what is the color of the shorts ?\\
+        Ground truth: black\\
+2-CNN-LSTM: \textcolor{red}{blue (0.4518) }\\
+CNN-BOW: \textcolor{red}{blue (0.3261) }\\
+BLIND-LSTM: \textcolor{green}{black (0.1963) }\\
+BLIND-BOW: \textcolor{green}{black (0.2141) }
+\\
+CNN can't tell that shorts are worn on lower part of the body}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2211.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2211: what is the color of the salad ?\\
+        Ground truth: green\\
+2-CNN-LSTM: \textcolor{red}{white (0.3428) }\\
+CNN-BOW: \textcolor{red}{white (0.3321) }\\
+BLIND-LSTM: \textcolor{green}{green (0.3224) }\\
+BLIND-BOW: \textcolor{green}{green (0.3310) }
+\\
+CNN is really looking at the background instead of the foreground}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/17918.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q17918: what is the color of the plate ?\\
+        Ground truth: white\\
+2-CNN-LSTM: \textcolor{red}{orange (0.4249) }\\
+CNN-BOW: \textcolor{red}{orange (0.4252) }\\
+BLIND-LSTM: \textcolor{green}{white (0.6865) }\\
+BLIND-BOW: \textcolor{green}{white (0.7853) }
+\\
+Not asking about the forgrond dominant object but CNN just can't help}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/2562.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q2562: what is the color of the ribbon ?\\
+        Ground truth: yellow\\
+2-CNN-LSTM: \textcolor{red}{white (0.8117) }\\
+CNN-BOW: \textcolor{red}{white (0.8068) }\\
+BLIND-LSTM: \textcolor{red}{red (0.2475) }\\
+BLIND-BOW: \textcolor{red}{red (0.1830) }
+\\
+Very hard question and even if it gets right it might just focusing on the bananas}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/3705.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q3705: what is the color of the flowers ?\\
+        Ground truth: blue\\
+2-CNN-LSTM: \textcolor{red}{orange (0.6924) }\\
+CNN-BOW: \textcolor{red}{orange (0.3380) }\\
+BLIND-LSTM: \textcolor{red}{purple (0.6047) }\\
+BLIND-BOW: \textcolor{red}{purple (0.5514) }
+\\
+Very unusual scene setting but again CNN doesn't focus on the right object}
+\\
+\end{array}$
+\caption{COCO-QA Color Questions}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/5826.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q5826: what is the color of the sign ?\\
+        Ground truth: blue\\
+2-CNN-LSTM: \textcolor{red}{red (0.3877) }\\
+CNN-BOW: \textcolor{red}{red (0.3503) }\\
+BLIND-LSTM: \textcolor{red}{red (0.4757) }\\
+BLIND-BOW: \textcolor{red}{red (0.3888) }
+\\
+Seems like all models are using textual information about a sign instead of the image}
+&
+\end{array}$
+\caption{COCO-QA Color Questions}
+\end{figure*}

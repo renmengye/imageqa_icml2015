@@ -1,0 +1,41 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Overview of the report}{2}
+\contentsline {chapter}{\numberline {2}Background}{3}
+\contentsline {section}{\numberline {2.1}Neural networks}{3}
+\contentsline {section}{\numberline {2.2}Error functions}{4}
+\contentsline {section}{\numberline {2.3}Learning of the weights}{6}
+\contentsline {subsection}{\numberline {2.3.1}Backpropagation}{6}
+\contentsline {subsection}{\numberline {2.3.2}Momentum}{6}
+\contentsline {subsection}{\numberline {2.3.3}Weight regularization}{7}
+\contentsline {subsection}{\numberline {2.3.4}Dropout}{7}
+\contentsline {section}{\numberline {2.4}Convolutional neural network (CNN)}{7}
+\contentsline {section}{\numberline {2.5}Recurrent neural network (RNN)}{8}
+\contentsline {subsection}{\numberline {2.5.1}Long short-term memory (LSTM)}{9}
+\contentsline {subsection}{\numberline {2.5.2}Learning of LSTM}{10}
+\contentsline {subsection}{\numberline {2.5.3}Gradient clipping}{10}
+\contentsline {subsection}{\numberline {2.5.4}Weight clipping}{10}
+\contentsline {subsection}{\numberline {2.5.5}Dropout in RNN}{11}
+\contentsline {section}{\numberline {2.6}Word embedding}{11}
+\contentsline {subsection}{\numberline {2.6.1}Skip gram embedding model}{11}
+\contentsline {section}{\numberline {2.7}Jointly learn image and word}{12}
+\contentsline {section}{\numberline {2.8}Image-based question answering}{12}
+\contentsline {subsection}{\numberline {2.8.1}DAQUAR dataset}{13}
+\contentsline {subsection}{\numberline {2.8.2}Previous attempt}{13}
+\contentsline {chapter}{\numberline {3}Current progress}{17}
+\contentsline {section}{\numberline {3.1}Problem restatement}{17}
+\contentsline {section}{\numberline {3.2}LSTM sentence model}{17}
+\contentsline {section}{\numberline {3.3}Image-word model and blind model}{18}
+\contentsline {section}{\numberline {3.4}Data augmentation}{20}
+\contentsline {chapter}{\numberline {4}Future works}{23}
+\contentsline {section}{\numberline {4.1}Data augmentation and new data}{23}
+\contentsline {section}{\numberline {4.2}More models}{23}
+\contentsline {subsection}{\numberline {4.2.1}Ranking model}{23}
+\contentsline {subsection}{\numberline {4.2.2}Visual attention model}{24}
+\contentsline {section}{\numberline {4.3}Longer answers and free-form answers}{24}
+\contentsline {chapter}{\numberline {5}Summary}{25}
+\contentsline {chapter}{\numberline {6}Appendix}{27}
+\contentsline {section}{\numberline {6.1}LSTM BPTT Algorithm}{27}
+\contentsline {section}{\numberline {6.2}Training details}{28}
+\contentsline {subsection}{\numberline {6.2.1}LSTM sentence model}{28}
+\contentsline {subsection}{\numberline {6.2.2}Image-word model}{29}
+\contentsline {subsection}{\numberline {6.2.3}Blind model}{31}

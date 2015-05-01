@@ -1,0 +1,9 @@
+\chapter{Conclusion}
+The goal of this research is to let a computer answer a question regarding an image. This type of problem has not been much explored yet. There is a lack of very large datasets as well as powerful models.
+
+On the modelling side of our work, we proposed to use the last hidden layer of CNN trained on object recognition as an image feature extractor and LSTM as a sentence embedding model. We mapped the image features into the joint embedding space with a linear transformation. We found that our model outperforms the previous attempt by 20\% on the same dataset with only one-word answers. We concluded that our proposed models of using joint visual-semantic embedding space achieved the best results so far. However, the gain is mostly from good natural language understanding. And the model is not doing very well on counting and colour recognition questions. 
+
+As the existing dataset might be too small and biased for training large scale neural networks, we decided to take an automatic approach to convert an existing image description dataset into QA forms. This results in a new dataset that is 20 times larger than the previous one. Compared to the previous dataset DAQUAR, our new dataset is much harder for a baseline such as ``guessing the modes'' to achieve good results; however ours is easier for human because it mostly consists of questions that focus on salient objects. Moreover, given the size of our dataset, it is more suitable to deep learning approaches. However, it still suffers from ungrammatical and unmeaningful questions, and is expected to be improved in the future.
+
+
+In conclusion, image-based question is a hard problem. We hope that our models and datasets presented in this thesis can shed light on future research on this topic.

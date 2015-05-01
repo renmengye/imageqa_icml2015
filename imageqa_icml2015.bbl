@@ -1,0 +1,137 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bird(2006)]{nltk}
+Bird, Steven.
+\newblock {NLTK:} the natural language toolkit.
+\newblock In \emph{{ACL} 2006, 21st International Conference on Computational
+  Linguistics and 44th Annual Meeting of the Association for Computational
+  Linguistics, Proceedings of the Conference, Sydney, Australia, 17-21 July
+  2006}, 2006.
+
+\bibitem[Chomsky(1973)]{chomsky73}
+Chomsky, Noam.
+\newblock \emph{Conditions on Transformations}.
+\newblock Academic Press, New York, 1973.
+
+\bibitem[Fellbaum(1998)]{wordnet}
+Fellbaum, Christiane (ed.).
+\newblock \emph{WordNet An Electronic Lexical Database}.
+\newblock The MIT Press, Cambridge, MA ; London, May 1998.
+\newblock ISBN 978-0-262-06197-1.
+
+\bibitem[Frome et~al.(2013)Frome, Corrado, Shlens, Bengio, Dean, Ranzato, and
+  Mikolov]{frome13}
+Frome, Andrea, Corrado, Gregory~S., Shlens, Jonathon, Bengio, Samy, Dean,
+  Jeffrey, Ranzato, Marc'Aurelio, and Mikolov, Tomas.
+\newblock Devise: {A} deep visual-semantic embedding model.
+\newblock In \emph{Advances in Neural Information Processing Systems 26: 27th
+  Annual Conference on Neural Information Processing Systems 2013.}, pp.\
+  2121--2129, 2013.
+
+\bibitem[Hodosh et~al.(2013)Hodosh, Young, and Hockenmaier]{flickr8k}
+Hodosh, Micah, Young, Peter, and Hockenmaier, Julia.
+\newblock Framing image description as a ranking task: Data, models and
+  evaluation metrics.
+\newblock \emph{J. Artif. Intell. Res. {(JAIR)}}, 47:\penalty0 853--899, 2013.
+
+\bibitem[Kiros et~al.(2014)Kiros, Salakhutdinov, and Zemel]{kiros14b}
+Kiros, Ryan, Salakhutdinov, Ruslan, and Zemel, Richard~S.
+\newblock Unifying visual-semantic embeddings with multimodal neural language
+  models.
+\newblock \emph{CoRR}, abs/1411.2539, 2014.
+\newblock URL \url{http://arxiv.org/abs/1411.2539}.
+
+\bibitem[Klein \& Manning(2003)Klein and Manning]{klein03}
+Klein, Dan and Manning, Christopher~D.
+\newblock Accurate unlexicalized parsing.
+\newblock In \emph{In proceedings of the 41st Annual Meeting of the Association
+  for Computational Linguistics}, pp.\  423--430, 2003.
+
+\bibitem[Liang et~al.(2013)Liang, Jordan, and Klein]{liang13}
+Liang, Percy, Jordan, Michael~I., and Klein, Dan.
+\newblock Learning dependency-based compositional semantics.
+\newblock \emph{Computational Linguistics}, 39\penalty0 (2):\penalty0 389--446,
+  2013.
+
+\bibitem[Lin et~al.(2014)Lin, Maire, Belongie, Hays, Perona, Ramanan,
+  Doll{\'{a}}r, and Zitnick]{mscoco}
+Lin, Tsung{-}Yi, Maire, Michael, Belongie, Serge, Hays, James, Perona, Pietro,
+  Ramanan, Deva, Doll{\'{a}}r, Piotr, and Zitnick, C.~Lawrence.
+\newblock Microsoft {COCO:} common objects in context.
+\newblock In \emph{Computer Vision - {ECCV} 2014 - 13th European Conference,
+  Zurich, Switzerland, September 6-12, 2014, Proceedings, Part {V}}, pp.\
+  740--755, 2014.
+
+\bibitem[Malinowski \& Fritz(2014{\natexlab{a}})Malinowski and
+  Fritz]{malinowski14a}
+Malinowski, Mateusz and Fritz, Mario.
+\newblock Towards a visual turing challenge.
+\newblock \emph{CoRR}, abs/1410.8027, 2014{\natexlab{a}}.
+\newblock URL \url{http://arxiv.org/abs/1410.8027}.
+
+\bibitem[Malinowski \& Fritz(2014{\natexlab{b}})Malinowski and
+  Fritz]{malinowski14b}
+Malinowski, Mateusz and Fritz, Mario.
+\newblock A multi-world approach to question answering about real-world scenes
+  based on uncertain input.
+\newblock In \emph{Neural Information Processing Systems (NIPS'14)},
+  2014{\natexlab{b}}.
+\newblock URL \url{http://arxiv.org/abs/1410.0210}.
+
+\bibitem[Mikolov et~al.(2013)Mikolov, Chen, Corrado, and Dean]{mikolov13}
+Mikolov, Tomas, Chen, Kai, Corrado, Greg, and Dean, Jeffrey.
+\newblock Efficient estimation of word representations in vector space.
+\newblock \emph{CoRR}, abs/1301.3781, 2013.
+\newblock URL \url{http://arxiv.org/abs/1301.3781}.
+
+\bibitem[Nathan~Silberman \& Fergus(2012)Nathan~Silberman and
+  Fergus]{silberman12}
+Nathan~Silberman, Derek~Hoiem, Pushmeet~Kohli and Fergus, Rob.
+\newblock Indoor segmentation and support inference from rgbd images.
+\newblock In \emph{ECCV}, 2012.
+
+\bibitem[Ordonez et~al.(2011)Ordonez, Kulkarni, and Berg]{ordonez11}
+Ordonez, Vicente, Kulkarni, Girish, and Berg, Tamara~L.
+\newblock Im2text: Describing images using 1 million captioned photographs.
+\newblock In \emph{Neural Information Processing Systems ({NIPS})}, 2011.
+
+\bibitem[Russakovsky et~al.(2014)Russakovsky, Deng, Su, Krause, Satheesh, Ma,
+  Huang, Karpathy, Khosla, Bernstein, Berg, and Fei-Fei]{ilsvrc14}
+Russakovsky, Olga, Deng, Jia, Su, Hao, Krause, Jonathan, Satheesh, Sanjeev, Ma,
+  Sean, Huang, Zhiheng, Karpathy, Andrej, Khosla, Aditya, Bernstein, Michael,
+  Berg, Alexander~C., and Fei-Fei, Li.
+\newblock {ImageNet Large Scale Visual Recognition Challenge}.
+\newblock arXiv:1409.0575, 2014.
+
+\bibitem[Simonyan \& Zisserman(2014)Simonyan and Zisserman]{simonyan14}
+Simonyan, Karen and Zisserman, Andrew.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock \emph{CoRR}, abs/1409.1556, 2014.
+\newblock URL \url{http://arxiv.org/abs/1409.1556}.
+
+\bibitem[Vinyals et~al.(2014)Vinyals, Toshev, Bengio, and Erhan]{vinyals14}
+Vinyals, Oriol, Toshev, Alexander, Bengio, Samy, and Erhan, Dumitru.
+\newblock Show and tell: {A} neural image caption generator.
+\newblock \emph{CoRR}, abs/1411.4555, 2014.
+\newblock URL \url{http://arxiv.org/abs/1411.4555}.
+
+\bibitem[Wu \& Palmer(1994)Wu and Palmer]{wu94}
+Wu, Zhibiao and Palmer, Martha.
+\newblock Verb semantics and lexical selection.
+\newblock In \emph{In Proceedings of the 32nd Annual Meeting of the Association
+  for Computational Linguistics}, pp.\  133--138, 1994.
+
+\bibitem[Xu et~al.(2015)Xu, Ba, Kiros, Cho, Courville, Salakhutdinov, Zemel,
+  and Bengio]{xu15}
+Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Cho, Kyunghyun, Courville, Aaron,
+  Salakhutdinov, Ruslan, Zemel, Richard~S., and Bengio, Yoshua.
+\newblock {Show, Attend and Tell: Neural Image Caption Generation with Visual
+  Attention}.
+\newblock \emph{ArXiv e-prints}, February 2015.
+
+\end{thebibliography}

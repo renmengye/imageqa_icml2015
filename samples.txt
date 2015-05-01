@@ -1,0 +1,371 @@
+formation 1: 
+Q683: how many military jet fighter is flying in formation alongside a 1 military propeller pilot ?
+Top 10 answers: (confidence)
+1. four 0.4021
+2. three 0.1329
+3. six 0.1160
+4. five 0.0901
+5. two 0.0620
+6. seven 0.0458
+7. nine 0.0298
+8. eight 0.0255
+9. one 0.0177
+10. ten 0.0148
+Correct answer: one
+
+motorcyclist:
+Q3437: who are driving in formation in a parade ?
+Top 10 answers: (confidence)
+1. motorcyclists 0.1214
+2. skateboarders 0.1121
+3. officers 0.0914
+4. riders 0.0682
+5. passengers 0.0660
+6. pedestrians 0.0490
+7. workers 0.0372
+8. guys 0.0372
+9. boys 0.0279
+10. players 0.0271
+Correct answer: officers
+
+formation2:
+Q7746: how many airplanes are flying up in the air in formation ?
+Top 10 answers: (confidence)
+1. four 0.3342
+2. three 0.1501
+3. six 0.1489
+4. five 0.1315
+5. two 0.0627
+6. seven 0.0453
+7. eight 0.0288
+8. nine 0.0283
+9. ten 0.0102
+10. one 0.0082
+Correct answer: four
+
+formation3:
+Q8473: how many jets in the sky in a flying formation ?
+Top 10 answers: (confidence)
+1. four 0.3291
+2. three 0.1376
+3. six 0.1358
+4. five 0.1239
+5. two 0.0707
+6. seven 0.0486
+7. nine 0.0310
+8. eight 0.0303
+9. one 0.0179
+10. ten 0.0146
+Correct answer: eight
+
+two1:
+Q44: an open food container box with how many unknown food items ?
+Top 10 answers: (confidence)
+1. two 0.2575
+2. three 0.1802
+3. four 0.1594
+4. one 0.1349
+5. five 0.0890
+6. six 0.0564
+7. seven 0.0262
+8. eight 0.0198
+9. ten 0.0164
+10. nine 0.0128
+Correct answer: four
+
+two2:
+Q47: the beautiful dessert waiting to be shared by how many people ?
+Top 10 answers: (confidence)
+1. two 0.4498
+2. three 0.2191
+3. four 0.1418
+4. five 0.0614
+5. six 0.0345
+6. one 0.0235
+7. seven 0.0143
+8. eight 0.0086
+9. nine 0.0076
+10. ten 0.0069
+Correct answer: two
+
+two3:
+Q1016: how many motor cycle racers posing on their parked bikes ?
+Top 10 answers: (confidence)
+1. two 0.4596
+2. three 0.2682
+3. four 0.1464
+4. five 0.0628
+5. six 0.0236
+6. seven 0.0097
+7. one 0.0074
+8. nine 0.0048
+9. eight 0.0048
+10. ten 0.0033
+Correct answer: three
+
+bird1:
+Q202: the giraffe with how many birds on his fur ?
+Top 10 answers: (confidence)
+1. three 0.3088
+2. two 0.2899
+3. four 0.2184
+4. five 0.1016
+5. six 0.0332
+6. seven 0.0120
+7. nine 0.0071
+8. eight 0.0052
+9. one 0.0042
+10. ten 0.0032
+Correct answer: three
+
+birdcat:
+Q2472: what is sitting on the handle bar of a bicycle ?
+Top 10 answers: (confidence)
+1. cat 0.5279
+2. kitten 0.0645
+3. bird 0.0463
+4. dog 0.0426
+5. banana 0.0216
+6. bottle 0.0162
+7. bear 0.0145
+8. cup 0.0144
+9. piece 0.0104
+10. doll 0.0103
+Correct answer: bird
+
+Q2472: what is sitting on the handle bar of a bicycle ?
+Top 10 answers: (confidence)
+1. cat 0.2564
+2. dog 0.1187
+3. bird 0.0397
+4. motorcycle 0.0283
+5. bear 0.0281
+6. bike 0.0256
+7. car 0.0239
+8. truck 0.0221
+9. computer 0.0183
+10. laptop 0.0170
+Correct answer: bird
+
+giraffe1:
+Q8325: how many giraffes are partially hidden in brush and sticking their necks out ?
+Top 10 answers: (confidence)
+1. three 0.3020
+2. two 0.2938
+3. four 0.1967
+4. five 0.1106
+5. six 0.0445
+6. seven 0.0151
+7. nine 0.0081
+8. eight 0.0080
+9. one 0.0047
+10. ten 0.0036
+Correct answer: two
+
+giraffe2:
+Q9967: how many giraffes in grassy field next to trees ?
+Top 10 answers: (confidence)
+1. three 0.3612
+2. two 0.3506
+3. four 0.1709
+4. five 0.0698
+5. six 0.0181
+6. seven 0.0073
+7. one 0.0037
+8. nine 0.0034
+9. eight 0.0030
+10. ten 0.0024
+Correct answer: three
+
+giraffe3:
+Q13103: how many giraffes standing together and eating near some trees ?
+Top 10 answers: (confidence)
+1. three 0.3169
+2. two 0.2588
+3. four 0.2160
+4. five 0.1217
+5. six 0.0372
+6. seven 0.0135
+7. nine 0.0068
+8. eight 0.0066
+9. one 0.0054
+10. ten 0.0038
+Correct answer: five
+
+banana1:
+Q10371: what is the color of the bananas ?
+Top 10 answers: (confidence)
+1. green 0.4876
+2. red 0.1477
+3. yellow 0.1449
+4. orange 0.0529
+5. white 0.0431
+6. brown 0.0307
+7. blue 0.0285
+8. purple 0.0219
+9. black 0.0142
+10. gray 0.0063
+Correct answer: green
+
+banana2:
+Q16954: what is the color of the bananas ?
+Top 10 answers: (confidence)
+1. green 0.4876
+2. red 0.1477
+3. yellow 0.1449
+4. orange 0.0529
+5. white 0.0431
+6. brown 0.0307
+7. blue 0.0285
+8. purple 0.0219
+9. black 0.0141
+10. gray 0.0063
+Correct answer: yellow
+
+banana3:
+Q5594: what is the color of the bananas ?
+Top 10 answers: (confidence)
+1. green 0.4876
+2. red 0.1477
+3. yellow 0.1449
+4. orange 0.0529
+5. white 0.0431
+6. brown 0.0307
+7. blue 0.0285
+8. purple 0.0219
+9. black 0.0142
+10. gray 0.0063
+Correct answer: yellow
+
+cat1:
+Q18455: what is the color of the cat ?
+Top 10 answers: (confidence)
+1. black 0.2271
+2. gray 0.1928
+3. grey 0.1870
+4. orange 0.1765
+5. brown 0.0980
+6. white 0.0692
+7. purple 0.0063
+8. yellow 0.0063
+9. red 0.0042
+10. blue 0.0037
+Correct answer: yellow
+
+cat2:
+Q19096: what is the color of the cat ?
+Top 10 answers: (confidence)
+1. black 0.2271
+2. gray 0.1928
+3. grey 0.1870
+4. orange 0.1765
+5. brown 0.0980
+6. white 0.0692
+7. purple 0.0063
+8. yellow 0.0063
+9. red 0.0042
+10. blue 0.0037
+Correct answer: black
+
+cat3:
+Q19942: what is the color of the cat ?
+Top 10 answers: (confidence)
+1. black 0.2272
+2. gray 0.1927
+3. grey 0.1870
+4. orange 0.1765
+5. brown 0.0980
+6. white 0.0692
+7. purple 0.0063
+8. yellow 0.0063
+9. red 0.0042
+10. blue 0.0037
+Correct answer: grey
+
+holding:
+Q4996: what does the person 's holding ?
+Top 10 answers: (confidence)
+1. umbrella 0.1070
+2. phone 0.0871
+3. cellphone 0.0332
+4. camera 0.0311
+5. frisbee 0.0304
+6. kite 0.0292
+7. surfboard 0.0284
+8. box 0.0283
+9. laptop 0.0270
+10. bottle 0.0269
+Correct answer: spoon
+
+onbed:
+Q5017: what is sitting on top of someones bed ?
+Top 10 answers: (confidence)
+1. computer 0.3026
+2. laptop 0.1884
+3. cat 0.0432
+4. bear 0.0317
+5. chair 0.0261
+6. keyboard 0.0234
+7. dog 0.0181
+8. bag 0.0157
+9. toy 0.0156
+10. cup 0.0151
+Correct answer: bicycle
+
+motorcycle1:
+Q5141: what parked on the side of the road ?
+Top 10 answers: (confidence)
+1. motorcycle 0.2263
+2. truck 0.2046
+3. bus 0.1292
+4. car 0.1119
+5. bike 0.0346
+6. motorcycles 0.0333
+7. cars 0.0276
+8. vehicle 0.0248
+9. buses 0.0216
+10. bicycle 0.0203
+Correct answer: motorcycle
+
+Q5141: what parked on the side of the road ?
+Top 10 answers: (confidence)
+1. truck 0.1103
+2. motorcycle 0.1051
+3. bus 0.0861
+4. car 0.0831
+5. buses 0.0566
+6. motorcycles 0.0495
+7. trucks 0.0379
+8. bike 0.0355
+9. cars 0.0353
+10. train 0.0254
+Correct answer: motorcycle
+
+tub1:
+Q5185: what next to a tub ?
+Top 10 answers: (confidence)
+1. toilet 0.3485
+2. bathroom 0.1921
+3. sink 0.1597
+4. inside 0.0254
+5. room 0.0173
+6. standing 0.0156
+7. restroom 0.0156
+8. kitchen 0.0146
+9. bathtub 0.0096
+10. tub 0.0092
+Correct answer: bathroom
+
+Q5185: what next to a tub ?
+Top 10 answers: (confidence)
+1. bathroom 0.2943
+2. toilet 0.0771
+3. standing 0.0724
+4. room 0.0418
+5. picture 0.0350
+6. kitchen 0.0247
+7. photo 0.0238
+8. sink 0.0176
+9. bedroom 0.0175
+10. scene 0.0112
+Correct answer: bathroom

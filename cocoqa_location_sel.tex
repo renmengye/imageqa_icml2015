@@ -1,0 +1,237 @@
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/42.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q42: where is a white tiger ?\\
+        Ground truth: pool\\
+2-CNN-LSTM: \textcolor{green}{pool (0.1984) }\\
+CNN-BOW: \textcolor{green}{pool (0.2602) }\\
+BLIND-LSTM: \textcolor{red}{bathroom (0.0935) }\\
+BLIND-BOW: \textcolor{red}{room (0.2206) }
+\\
+Image features are useful}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/857.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q857: where is the woman ?\\
+        Ground truth: station\\
+2-CNN-LSTM: \textcolor{green}{station (0.0833) }\\
+CNN-BOW: \textcolor{green}{station (0.2196) }\\
+BLIND-LSTM: \textcolor{red}{bed (0.0644) }\\
+BLIND-BOW: \textcolor{red}{room (0.1590) }
+\\
+Image features are useful}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/805.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q805: where is fruit and ice ?\\
+        Ground truth: blender\\
+2-CNN-LSTM: \textcolor{green}{blender (0.1350) }\\
+CNN-BOW: \textcolor{green}{blender (0.3828) }\\
+BLIND-LSTM: \textcolor{red}{bowl (0.3528) }\\
+BLIND-BOW: \textcolor{red}{bowl (0.5479) }
+\\
+Inclusion of object (not just room and scene)}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/9648.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q9648: where does the man with glasses and a tie clip sit ?\\
+        Ground truth: car\\
+2-CNN-LSTM: \textcolor{green}{car (0.7772) }\\
+CNN-BOW: \textcolor{green}{car (0.4117) }\\
+BLIND-LSTM: \textcolor{red}{bowl (0.1078) }\\
+BLIND-BOW: \textcolor{red}{room (0.3101) }
+\\
+This one is hard to see it is in a car}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/15891.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q15891: where did the cat curl up UNK laying ?\\
+        Ground truth: sink\\
+2-CNN-LSTM: \textcolor{green}{sink (0.8603) }\\
+CNN-BOW: \textcolor{green}{sink (0.4068) }\\
+BLIND-LSTM: \textcolor{red}{bed (0.3623) }\\
+BLIND-BOW: \textcolor{red}{plate (0.0401) }
+\\
+Easy one for CNN}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/25218.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q25218: where are the ripe bananas sitting ?\\
+        Ground truth: basket\\
+2-CNN-LSTM: \textcolor{green}{basket (0.4965) }\\
+CNN-BOW: \textcolor{green}{basket (0.4929) }\\
+BLIND-LSTM: \textcolor{red}{bowl (0.6415) }\\
+BLIND-BOW: \textcolor{red}{bowl (0.5170) }
+\\
+Inclusion of object}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/25397.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q25397: where are people looking are different products ?\\
+        Ground truth: store\\
+2-CNN-LSTM: \textcolor{green}{store (0.2376) }\\
+CNN-BOW: \textcolor{green}{store (0.2212) }\\
+BLIND-LSTM: \textcolor{red}{kitchen (0.1704) }\\
+BLIND-BOW: \textcolor{red}{window (0.1182) }
+\\
+Hard to infer}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/35349.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q35349: where is an elephant approaching ?\\
+        Ground truth: mirror\\
+2-CNN-LSTM: \textcolor{green}{mirror (0.1540) }\\
+CNN-BOW: \textcolor{green}{mirror (0.8029) }\\
+BLIND-LSTM: \textcolor{red}{zoo (0.1094) }\\
+BLIND-BOW: \textcolor{red}{zoo (0.1345) }
+\\
+The model knows that the elephant is inside the mirror}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/137.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q137: where is the unique motorcycle parked ?\\
+        Ground truth: garage\\
+2-CNN-LSTM: \textcolor{green}{garage (0.3119) }\\
+CNN-BOW: \textcolor{red}{motorcycle (0.7361) }\\
+BLIND-LSTM: \textcolor{red}{street (0.1918) }\\
+BLIND-BOW: \textcolor{red}{street (0.1905) }
+\\
+BOW relies too much on image features and LSTM combines image and text well}
+\\
+\end{array}$
+\caption{}
+\end{figure*}
+\begin{figure*}[ht!]
+\small
+$\begin{array}{p{5cm} p{5cm} p{5cm}}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/23418.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q23418: where do the girl and her dog sit ?\\
+        Ground truth: chair\\
+2-CNN-LSTM: \textcolor{green}{chair (0.4588) }\\
+CNN-BOW: \textcolor{red}{bed (0.2899) }\\
+BLIND-LSTM: \textcolor{red}{bed (0.2878) }\\
+BLIND-BOW: \textcolor{red}{bed (0.2042) }
+\\
+Funny picture}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/38461.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q38461: where is the lady making a funny face ?\\
+        Ground truth: restaurant\\
+2-CNN-LSTM: \textcolor{green}{restaurant (0.6185) }\\
+CNN-BOW: \textcolor{red}{kitchen (0.3851) }\\
+BLIND-LSTM: \textcolor{red}{mirror (0.1753) }\\
+BLIND-BOW: \textcolor{red}{kitchen (0.2680) }
+\\
+It makes sense for the blind model to guess ``mirror''}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/6428.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q6428: where is the woman taking her picture ?\\
+        Ground truth: mirror\\
+2-CNN-LSTM: \textcolor{red}{bathroom (0.7403) }\\
+CNN-BOW: \textcolor{red}{bathroom (0.4690) }\\
+BLIND-LSTM: \textcolor{green}{mirror (0.8559) }\\
+BLIND-BOW: \textcolor{green}{mirror (0.7299) }
+\\
+Answer could be bathroom as well but interesting to see the blind models choosing ``mirror''}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/26714.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q26714: where do orange flowers fill vases ?\\
+        Ground truth: shop\\
+2-CNN-LSTM: \textcolor{red}{vase (0.6365) }\\
+CNN-BOW: \textcolor{red}{vase (0.9500) }\\
+BLIND-LSTM: \textcolor{red}{vase (0.4533) }\\
+BLIND-BOW: \textcolor{red}{vase (0.4836) }
+\\
+Many location based questions are noisy in the sense that there exist many valid answer}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/23637.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q23637: where does the full view of some upright toilets ?\\
+        Ground truth: restroom\\
+2-CNN-LSTM: \textcolor{red}{bathroom (0.6114) }\\
+CNN-BOW: \textcolor{red}{bathroom (0.5171) }\\
+BLIND-LSTM: \textcolor{red}{bathroom (0.1748) }\\
+BLIND-BOW: \textcolor{red}{room (0.1441) }
+\\
+Synonyms are also the noise of the dataset}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/6144.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q6144: where does the yellow cat sit ?\\
+        Ground truth: sink\\
+2-CNN-LSTM: \textcolor{green}{sink (0.1054) }\\
+CNN-BOW: \textcolor{red}{kitten (0.2359) }\\
+BLIND-LSTM: \textcolor{green}{sink (0.3562) }\\
+BLIND-BOW: \textcolor{green}{sink (0.1931) }
+\\
+As in the color case again the BOW fails to understand the question and directly uses image feature}
+\\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/172.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q172: where are the sink and toilet ?\\
+        Ground truth: bathroom\\
+2-CNN-LSTM: \textcolor{green}{bathroom (0.8315) }\\
+CNN-BOW: \textcolor{green}{bathroom (0.6268) }\\
+BLIND-LSTM: \textcolor{green}{bathroom (0.7750) }\\
+BLIND-BOW: \textcolor{green}{bathroom (0.8103) }
+\\
+Some questions are fairly easy and can be answered without looking at the image}
+&
+    \scalebox{0.3}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{cocoqa_img/8887.jpg}}
+    \parbox{5cm}{
+        \vskip 0.05in
+        Q8887: where do delicate blue flowers sit ?\\
+        Ground truth: vase\\
+2-CNN-LSTM: \textcolor{green}{vase (0.9371) }\\
+CNN-BOW: \textcolor{green}{vase (0.9150) }\\
+BLIND-LSTM: \textcolor{green}{vase (0.9253) }\\
+BLIND-BOW: \textcolor{green}{vase (0.8517) }
+\\
+Easy one}
+&
+\end{array}$
+\caption{}
+\end{figure*}

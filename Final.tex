@@ -1,0 +1,76 @@
+\documentclass[12pt,lettersize]{book}
+\usepackage{amsmath, amsthm, amscd}
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+\usepackage{graphicx}
+\usepackage{algorithmicx} 
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+%\usepackage{fancyhdr}
+%\usepackage[colorlinks=true,linkcolor=cyan]{hyperref}
+
+% Strike line
+\usepackage{ulem}
+\usepackage{caption}
+
+% Subfigure
+\usepackage{subcaption}
+\usepackage{booktabs}
+
+% Syntax tree
+\usepackage{qtree}
+\usepackage[margin=2cm]{geometry}
+
+% Paragraph
+\usepackage{parskip}
+
+% Page number
+\usepackage{lastpage}
+
+% Line space
+\usepackage{setspace}
+
+% Font
+\renewcommand*\rmdefault{ppl}
+%\usepackage{times}
+
+% Macros
+% Partial derivatives
+\newcommand{\del}{\partial}
+% Norm
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+% Matrix/vector bold fonts
+\newcommand{\+}[1]{\ensuremath{\mathbf{#1}}}
+% Transpose
+\newcommand{\tran}{^{\mathstrut\scriptscriptstyle\top}} 
+% Algorithm input/output
+\renewcommand{\algorithmicrequire}{\textbf{input:}}
+\renewcommand{\algorithmicensure}{\textbf{output:}}
+\setlength{\parskip}{0.5em}
+\onehalfspace
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\title{Image-Based Question Answering with Visual Semantic Embeddings}
+\date{\today}
+\author{Mengye Ren}
+\begin{document}
+\input{Title.tex}
+\setcounter{page}{1}
+\pagenumbering{roman}
+\input{Abstract.tex}
+\input{Acknowledgement.tex}
+\tableofcontents
+\listoftables
+\listoffigures
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\input{Introduction.tex}
+\input{Background.tex}
+\input{Current.tex}
+\input{Discussion.tex}
+\input{Future.tex}
+\input{Conclusion.tex}
+\input{Appendix.tex}
+\bibliography{Reference}{}
+\bibliographystyle{ieee}
+\end{document}

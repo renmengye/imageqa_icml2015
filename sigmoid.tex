@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[domain=-3:3, xscale=1.5, yscale=3.5]
+    \draw[->] (-3,0) -- (3,0) node[right] {$z$}; 
+    \draw[->] (0,0) -- (0,1.1) node[above] {$f(z)$};
+	\draw plot (\x,{1/(1+exp(-\x))}) node[right] {}; 
+	% ticks
+	\foreach \x in {-2,...,2}
+ 		\draw (\x,1pt) -- (\x,-3pt)
+		node[anchor=north] {\x};
+	\foreach \y in {1}
+ 		\draw (1pt,\y) -- (-3pt,\y) 
+ 		node[anchor=east] {\y}; 
+\end{tikzpicture}
