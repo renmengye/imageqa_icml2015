@@ -34,7 +34,7 @@
 % resulting PDF.  If this breaks your system, please commend out the
 % following usepackage line and replace \usepackage{icml2015} with
 % \usepackage[nohyperref]{icml2015} above.
-\usepackage{hyperref}
+% \usepackage{hyperref}
 
 \usepackage{footnote}
 
@@ -185,11 +185,9 @@ First, we consider asking an object using ``what''. This involves replacing the 
 \begin{enumerate}
 \item Split long sentences into simple sentences
 \item Change indefinite determiners to definite determiners.
-\item Traverse the sentence and identify potential answers and replace with ``what''. During the traversal of object-type question generation, we ignore all the prepositional phrase (PP) consituents because nouns inside prepositions like ``of'' and ``with'' are rarely meaningful answers.
+\item Traverse the sentence and identify potential answers and replace with ``what''. During the traversal of object-type question generation, we currently ignore all the prepositional phrase (PP) consituents.
 \item Perform wh-movement
 \end{enumerate}
-
-Figure~\ref{fig:what_gen} illustrates these procedures with tree diagrams. In order to identify a possible answer word, we used WordNet \cite{wordnet} and NLTK software package \cite{nltk} to get noun categories.
 
 \begin{figure}
     \centering
@@ -203,6 +201,8 @@ Figure~\ref{fig:what_gen} illustrates these procedures with tree diagrams. In or
     \label{fig:what_gen}
 \end{figure}
 
+Figure~\ref{fig:what_gen} illustrates an example with tree diagrams. In order to identify a possible answer word, we used WordNet \cite{wordnet} and NLTK software package \cite{nltk} to get noun categories.
+
 \subsubsection{Number-Type Questions}
 To generate ``how many'' types of questions, we follow a similar procedure as the previous algorithm, except for a different way to identify potential answers. This time, we need to extract numbers from original sentences. Splitting compound sentences, changing determiners, and wh-movement parts remain the same.
 
@@ -210,22 +210,21 @@ To generate ``how many'' types of questions, we follow a similar procedure as th
 Color-type questions are much easier to generate. It only requires locating the colour adjective and the noun which the adjective attaches to. Then it simply forms a sentence ``What is the colour of the object'' with the ``object'' replaced by the actual noun.
 
 \subsubsection{Location-Type Questions}
-Similar to generating object-type question, except that now the answer traversal will only search within PP contituents with preposition ``in''. We also added rules to filter out clothings so that the answers will mostly be locations, scenes, or large objects that contain smaller objects.
+Similar to generating object-type question, except that now the answer traversal will only search within PP contituents started with preposition ``in''. We also added rules to filter out clothings so that the answers will mostly be locations, scenes, or large objects that contain smaller objects.
 
 \subsubsection{Post-Processing}
 We will show in our experiment results that mode-guessing actually works unexpectedly well in DAQUAR dataset. One of our design requirement of the new dataset is to avoid too common answers.  To achieve this goal, we applied a heuristic to reject the answers that appear too often in generated dataset. First, all QA pairs are shuffled to mitigate dependence between neighboring pairs. We formulate the rejection process as a Bernoulli random process. The probability of enrolling next QA pair $(q, a)$ is:
 \begin{equation}
 p(q, a) = \left\{ \begin{array}{cl}
-1 &\mbox{ if count$(a)$ $\le U$ } \\
-\exp\left(-\frac{count(a) - U}{2U}\right) &\mbox{ otherwise }
+1 &\mbox{ if count$(a)$ $\le K$ } \\
+\exp\left(-\frac{count(a) - K}{K_2}\right) &\mbox{ otherwise }
 \end{array} \right.
 \end{equation}
-where $count(a)$ denotes the current number of enrolled QA pairs that have $a$ as the ground truth answer. After this QA selection process we obtain more uniform distribution of all possible answers.
-
+where $count(a)$ denotes the current number of enrolled QA pairs that have $a$ as the ground truth answer, and $K$, $K_2$ are some constants with $K \le K_2$. In the COCO-QA generation we choose $K = 100$ and $K_2 = 200$. After this QA selection process we obtain more uniform distribution of all possible answers.
 \section{Experimental Results}
 
-\subsection{Dataset}
-Table~\ref{tab:dataset_stats} summarizes the difference between DAQUAR and COCO-QA. COCO-QA has much more data to support the training of more complex models on a larger number of possible answer classes. Another important note is that since we applied QA pair selection process, mode-guessing performs very poorly on COCO-QA; however, since all the answers can be found in the original image descriptions, COCO-QA questions are actually easier to answer from a human point of view. This encourages the model to exploit salient object relations instead of exhaustively search from all possible relations.
+\subsection{Datasets}
+Table~\ref{tab:dataset_stats} summarizes the difference between DAQUAR and COCO-QA. It should be noted that since we applied QA pair selection process, mode-guessing performs very poorly on COCO-QA; however, COCO-QA questions are actually easier to answer from a human point of view. This encourages the model to exploit salient object relations instead of exhaustively search from all possible relations.
 
 \begin{table}[h]
 \label{tab:dataset_stats}
@@ -283,8 +282,8 @@ Total    & 83404 & 100.00\% & 38660 & 100.00\% \\
 \end{center}
 \end{table}
 
-\subsection{Proposed Model Details}
-We trained two versions of the architectures that are found to work the best. The first model is CNN and LSTM with a weight matrix in the middle and we call it ``CNN-LSTM model'' in our tables and figures. The second model has two image feature input at the start and the end of the sentence with different linear transformations, and additionally it has two LSTMs going from the forward and backward direction. Both LSTMs output to the softmax layer at the last timestep. We call the second model ``2-CNN-LSTM model'' in our tables and figures.
+\subsection{Model Details}
+We trained two versions of the architectures that are found to work the best. The first model is CNN and LSTM with a weight matrix in the middle and we call it ``CNN-LSTM'' in our tables and figures. The second model has two image feature input at the start and the end of the sentence with different linear transformations, and additionally it has two LSTMs going from the forward and backward direction. Both LSTMs output to the softmax layer at the last timestep. We call the second model ``2-CNN-LSTM''.
 
 \subsection{Baselines}
 To evaluate the effectiveness of our models, we designed a few baselines. 
@@ -293,16 +292,16 @@ To evaluate the effectiveness of our models, we designed a few baselines.
 One very simple baseline is to predict the mode based on question type. For example, if the question contains ``how many'' then the model will output ``two.'' This baseline actually works unexpectedly well in DAQUAR dataset.
 
 \subsubsection{BLIND-BOW model}
-To avoid over-interpretation of the results, we designed blind-model baselines which are given only the questions without the images. It is interesting to see how image features are useful in answering the questions. One of the simplest blind model is to simply sum all the word vectors of the question into a bag-of-word (BOW) vector. We then send the sentence features into a softmax layer. Optionally we added a tanh hidden layer before the softmax layer to allow more interaction between image features and word features.
+To avoid over-interpretation of the results, we designed ``blind'' models baselines which are given only the questions without the images. One of the simplest blind model is to simply sum all the word vectors of the question into a bag-of-word (BOW) vector. We then use logistic regression to classify answers with an optional tanh hidden layer.
 
 \subsubsection{BLIND-LSTM model}
-Another blind model we experimented is to input the question words into the LSTM alone. We could compare it with BLIND-BOW to see how does LSTM contribute to a better language understanding.
+Another blind model we experimented is to input the question words into the LSTM alone. 
 
 \subsubsection{CNN-BOW model}
-Similar to BLIND-BOW model but replaced the feature layer with bag-of-word sentence features concatenated with image features from Oxford Net last hidden layer (4096 dimension) after a linear transformation (to 300 or 500 dimension).
+Same as the BLIND-BOW model but replaced the feature layer with bag-of-word sentence features concatenated with image features from Oxford Net last hidden layer (4096 dimension) after a linear transformation (to 300 or 500 dimension).
 
 \subsection{Performance Metrics}
-To evaluate the model, we used the plain answer accuracy as well as the Wu-Palmer similarity (WUPS) measure \cite{wu94, malinowski14b}. The WUPS calculates the similarity between two words based on their longest common subsequence in the taxonomy tree. The similarity function takes in a threshold parameter. If the similarity between two words is less than the threshold then a score of zero will be given to the candidate answer. It reduces to plain accuracy when the threshold equals to 1.0. Following \cite{malinowski14b}, we measure all the models in terms of plain accuracy and WUPS at 0.9 threshold.
+To evaluate the model, we used the plain answer accuracy as well as the Wu-Palmer similarity (WUPS) measure \cite{wu94, malinowski14b}. The WUPS calculates the similarity between two words based on their longest common subsequence in the taxonomy tree. The similarity function takes in a threshold parameter. If the similarity between two words is less than the threshold then a score of zero will be given to the candidate answer. It reduces to plain accuracy when the threshold equals to 1.0. Following \cite{malinowski14b}, we measure all the models in terms of plain accuracy and WUPS 0.9.
 
 Table~\ref{tab:daquar_results} summarizes the learning results on DAQUAR dataset. Here we compare our results with \cite{malinowski14b}'s. It should be noted that their results is for the entire dataset whereas our result is for 98.3\% of the original dataset with single word answers.
 
