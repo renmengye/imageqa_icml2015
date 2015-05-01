@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex imageqa_icml2015"] 1430505052 "imageqa_icml2015.aux" "imageqa_icml2015.bbl" "imageqa_icml2015" 1430505053
+["bibtex imageqa_icml2015"] 1430505052 "imageqa_icml2015.aux" "imageqa_icml2015.bbl" "imageqa_icml2015" 1430505734
   "./icml2015.bst" 1323449214 27012 bac9c9ef6a3d56da903d9ae0dc074591 ""
   "Reference.bib" 1430466604 18812 ec88301340a896241cfc57cb00941989 ""
-  "imageqa_icml2015.aux" 1430505053 2556 935f3d9f19765f5bb1aedfd4db089917 ""
+  "imageqa_icml2015.aux" 1430505734 2556 935f3d9f19765f5bb1aedfd4db089917 ""
   "imageqa_icml2015.bcf" 0 -1 0 ""
   (generated)
-  "imageqa_icml2015.bbl"
   "imageqa_icml2015.blg"
-["pdflatex"] 1430505052 "imageqa_icml2015.tex" "imageqa_icml2015.pdf" "imageqa_icml2015" 1430505053
+  "imageqa_icml2015.bbl"
+["pdflatex"] 1430505734 "imageqa_icml2015.tex" "imageqa_icml2015.pdf" "imageqa_icml2015" 1430505734
   "/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty" 1335995445 24460 92f559a71aac869021852c227c704b38 ""
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty" 1335995445 7612 c47308d923ec19888707b0f1792b326a ""
@@ -125,9 +125,9 @@
   "daquar_img/585.jpg" 1430437438 32193 168e71bbd1d07015b9a8bfc802d0ff37 ""
   "fancyhdr.sty" 1290088650 21006 088e3513a90ac3aa21515dd46e858ae4 ""
   "icml2015.sty" 1418043718 21029 cca687cdc1b9e929cda79ce4aa780668 ""
-  "imageqa_icml2015.aux" 1430505053 2556 935f3d9f19765f5bb1aedfd4db089917 ""
+  "imageqa_icml2015.aux" 1430505734 2556 935f3d9f19765f5bb1aedfd4db089917 ""
   "imageqa_icml2015.bbl" 1430505052 6200 bde0ed17306aef659eab56a5e63fd3d2 "bibtex imageqa_icml2015"
-  "imageqa_icml2015.tex" 1430505051 37473 48ccf615acec27333ea221254801ccae ""
+  "imageqa_icml2015.tex" 1430505729 37481 4aae5093d609e744e8e39180ad9ed6a8 ""
   "imgword.tex" 1430262285 2074 7643a89e1b9079aa267565b1409150eb ""
   "natbib.sty" 1290088650 45154 40088ce024445d7ee2bca59e704cdd01 ""
   "p2e-pdftex.def" 1427384886 1151 1688522a26b456facf337c1c990b92e4 ""
@@ -136,7 +136,7 @@
   "qtree.sty" 1427384643 37845 ba2ecdf07a86e5575c82758e019f980a ""
   "ulem.sty" 1427386687 23756 854c01b779030ff5b2aad88ba7a119f2 ""
   (generated)
-  "imageqa_icml2015.aux"
   "imageqa_icml2015.log"
-  "imageqa_icml2015.pdf"
   "imageqa_icml2015.out"
+  "imageqa_icml2015.aux"
+  "imageqa_icml2015.pdf"
