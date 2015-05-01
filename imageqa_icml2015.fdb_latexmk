@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex imageqa_icml2015"] 1430498769 "imageqa_icml2015.aux" "imageqa_icml2015.bbl" "imageqa_icml2015" 1430502941
+["bibtex imageqa_icml2015"] 1430498769 "imageqa_icml2015.aux" "imageqa_icml2015.bbl" "imageqa_icml2015" 1430503454
   "./icml2015.bst" 1323449214 27012 bac9c9ef6a3d56da903d9ae0dc074591 ""
   "Reference.bib" 1430466604 18812 ec88301340a896241cfc57cb00941989 ""
-  "imageqa_icml2015.aux" 1430502941 3728 48d20cfc091ef2a36928b7a09713a5e4 ""
+  "imageqa_icml2015.aux" 1430503453 3728 48d20cfc091ef2a36928b7a09713a5e4 ""
   "imageqa_icml2015.bcf" 0 -1 0 ""
   (generated)
   "imageqa_icml2015.bbl"
   "imageqa_icml2015.blg"
-["pdflatex"] 1430502941 "imageqa_icml2015.tex" "imageqa_icml2015.pdf" "imageqa_icml2015" 1430502941
+["pdflatex"] 1430503453 "imageqa_icml2015.tex" "imageqa_icml2015.pdf" "imageqa_icml2015" 1430503454
   "/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1284331290 1458 43ab4710dc82f3edeabecd0d099626b2 ""
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty" 1303254447 8237 52810bdb4db2270e717422560a104aea ""
@@ -130,10 +130,10 @@
   "daquar_img/585.jpg" 1430437438 32193 168e71bbd1d07015b9a8bfc802d0ff37 ""
   "fancyhdr.sty" 1290088650 21006 088e3513a90ac3aa21515dd46e858ae4 ""
   "icml2015.sty" 1418043718 21029 cca687cdc1b9e929cda79ce4aa780668 ""
-  "imageqa_icml2015.aux" 1430502941 3728 48d20cfc091ef2a36928b7a09713a5e4 ""
+  "imageqa_icml2015.aux" 1430503453 3728 48d20cfc091ef2a36928b7a09713a5e4 ""
   "imageqa_icml2015.bbl" 1430498769 6200 bde0ed17306aef659eab56a5e63fd3d2 "bibtex imageqa_icml2015"
-  "imageqa_icml2015.out" 1430502941 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "imageqa_icml2015.tex" 1430502931 37966 028ce575c6f8a002e36127515a2d0686 ""
+  "imageqa_icml2015.out" 1430503453 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "imageqa_icml2015.tex" 1430503444 37972 5e14a9a1333f6800e92f08f44fe6eba1 ""
   "imgword.tex" 1430262285 2074 7643a89e1b9079aa267565b1409150eb ""
   "natbib.sty" 1290088650 45154 40088ce024445d7ee2bca59e704cdd01 ""
   "p2e-pdftex.def" 1427384886 1151 1688522a26b456facf337c1c990b92e4 ""
@@ -144,5 +144,5 @@
   (generated)
   "imageqa_icml2015.log"
   "imageqa_icml2015.out"
-  "imageqa_icml2015.pdf"
   "imageqa_icml2015.aux"
+  "imageqa_icml2015.pdf"
