@@ -1,22 +1,55 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Antol et~al.(2015)Antol, Agrawal, Lu, Mitchell, Batra, Zitnick, and
+  Parikh]{antol14}
+Antol, Stanislaw, Agrawal, Aishwarya, Lu, Jiasen, Mitchell, Margaret, Batra,
+  Dhruv, Zitnick, C.~Lawrence, and Parikh, Devi.
+\newblock {VQA: Visual Question Answering}.
+\newblock \emph{CoRR}, abs/1505.00468, 2015.
+
 \bibitem[Bird(2006)]{nltk}
 Bird, Steven.
 \newblock {NLTK:} the natural language toolkit.
-\newblock In \emph{{ACL} 2006, 21st International Conference on Computational
-  Linguistics and 44th Annual Meeting of the Association for Computational
-  Linguistics, Proceedings of the Conference, Sydney, Australia, 17-21 July
-  2006}, 2006.
+\newblock In \emph{ACL}, 2006.
+
+\bibitem[Chen \& Zitnick(2014)Chen and Zitnick]{chen14}
+Chen, Xinlei and Zitnick, C.~Lawrence.
+\newblock Learning a recurrent visual representation for image caption
+  generation.
+\newblock \emph{CoRR}, abs/1411.5654, 2014.
+
+\bibitem[Chen et~al.(2015)Chen, Fang, Lin, Vedantam, Gupta, Doll{\'{a}}r, and
+  Zitnick]{chen15}
+Chen, Xinlei, Fang, Hao, Lin, Tsung{-}Yi, Vedantam, Ramakrishna, Gupta,
+  Saurabh, Doll{\'{a}}r, Piotr, and Zitnick, C.~Lawrence.
+\newblock Microsoft {COCO} captions: Data collection and evaluation server.
+\newblock \emph{CoRR}, abs/1504.00325, 2015.
 
 \bibitem[Chomsky(1973)]{chomsky73}
 Chomsky, Noam.
 \newblock \emph{Conditions on Transformations}.
 \newblock Academic Press, New York, 1973.
+
+\bibitem[Donahue et~al.(2014)Donahue, Hendricks, Guadarrama, Rohrbach,
+  Venugopalan, Saenko, and Darrell]{donahue14}
+Donahue, Jeff, Hendricks, Lisa~Anne, Guadarrama, Sergio, Rohrbach, Marcus,
+  Venugopalan, Subhashini, Saenko, Kate, and Darrell, Trevor.
+\newblock Long-term recurrent convolutional networks for visual recognition and
+  description.
+\newblock In \emph{CVPR}, 2014.
+
+\bibitem[Fang et~al.(2015)Fang, Gupta, Iandola, Srivastava, Deng, Doll{\'{a}}r,
+  Gao, He, Mitchell, Platt, Zitnick, and Zweig]{fang14}
+Fang, Hao, Gupta, Saurabh, Iandola, Forrest~N., Srivastava, Rupesh, Deng, Li,
+  Doll{\'{a}}r, Piotr, Gao, Jianfeng, He, Xiaodong, Mitchell, Margaret, Platt,
+  John~C., Zitnick, C.~Lawrence, and Zweig, Geoffrey.
+\newblock From captions to visual concepts and back.
+\newblock In \emph{CVPR}, 2015.
 
 \bibitem[Fellbaum(1998)]{wordnet}
 Fellbaum, Christiane (ed.).
@@ -29,9 +62,19 @@ Fellbaum, Christiane (ed.).
 Frome, Andrea, Corrado, Gregory~S., Shlens, Jonathon, Bengio, Samy, Dean,
   Jeffrey, Ranzato, Marc'Aurelio, and Mikolov, Tomas.
 \newblock Devise: {A} deep visual-semantic embedding model.
-\newblock In \emph{Advances in Neural Information Processing Systems 26: 27th
-  Annual Conference on Neural Information Processing Systems 2013.}, pp.\
-  2121--2129, 2013.
+\newblock In \emph{NIPS}, 2013.
+
+\bibitem[Gao et~al.(2015)Gao, Mao, Zhou, Huang, Wang, and Xu]{gao15}
+Gao, Haoyuan, Mao, Junhua, Zhou, Jie, Huang, Zhiheng, Wang, Lei, and Xu, Wei.
+\newblock Are you talking to a machine? dataset and methods for multilingual
+  image question answering.
+\newblock \emph{CoRR}, abs/1505.05612, 2015.
+
+\bibitem[Hochreiter \& Schmidhuber(1997)Hochreiter and
+  Schmidhuber]{hochreiter97}
+Hochreiter, Sepp and Schmidhuber, J{\"{u}}rgen.
+\newblock Long short-term memory.
+\newblock \emph{Neural Computation}, 9\penalty0 (8):\penalty0 1735--1780, 1997.
 
 \bibitem[Hodosh et~al.(2013)Hodosh, Young, and Hockenmaier]{flickr8k}
 Hodosh, Micah, Young, Peter, and Hockenmaier, Julia.
@@ -39,18 +82,32 @@ Hodosh, Micah, Young, Peter, and Hockenmaier, Julia.
   evaluation metrics.
 \newblock \emph{J. Artif. Intell. Res. {(JAIR)}}, 47:\penalty0 853--899, 2013.
 
-\bibitem[Kiros et~al.(2014)Kiros, Salakhutdinov, and Zemel]{kiros14b}
+\bibitem[Karpathy et~al.(2013)Karpathy, Joulin, and Fei{-}Fei]{karpathy14}
+Karpathy, Andrej, Joulin, Armand, and Fei{-}Fei, Li.
+\newblock Deep fragment embeddings for bidirectional image sentence mapping.
+\newblock In \emph{NIPS}, 2013.
+
+\bibitem[Kiros et~al.(2015)Kiros, Salakhutdinov, and Zemel]{kiros14b}
 Kiros, Ryan, Salakhutdinov, Ruslan, and Zemel, Richard~S.
 \newblock Unifying visual-semantic embeddings with multimodal neural language
   models.
-\newblock \emph{CoRR}, abs/1411.2539, 2014.
-\newblock URL \url{http://arxiv.org/abs/1411.2539}.
+\newblock \emph{TACL}, 2015.
+
+\bibitem[Klein et~al.(2015)Klein, Lev, Lev, and Wolf]{klein15}
+Klein, Benjamin, Lev, Guy, Lev, Gil, and Wolf, Lior.
+\newblock Fisher vectors derived from hybrid gaussian-laplacian mixture models
+  for image annotations.
+\newblock In \emph{CVPR}, 2015.
 
 \bibitem[Klein \& Manning(2003)Klein and Manning]{klein03}
 Klein, Dan and Manning, Christopher~D.
 \newblock Accurate unlexicalized parsing.
-\newblock In \emph{In proceedings of the 41st Annual Meeting of the Association
-  for Computational Linguistics}, pp.\  423--430, 2003.
+\newblock In \emph{ACL}, 2003.
+
+\bibitem[Lebret et~al.(2015)Lebret, Pinheiro, and Collobert]{lebret15}
+Lebret, R{\'{e}}mi, Pinheiro, Pedro~O., and Collobert, Ronan.
+\newblock Phrase-based image captioning.
+\newblock In \emph{ICML (to appear)}, 2015.
 
 \bibitem[Liang et~al.(2013)Liang, Jordan, and Klein]{liang13}
 Liang, Percy, Jordan, Michael~I., and Klein, Dan.
@@ -63,75 +120,83 @@ Liang, Percy, Jordan, Michael~I., and Klein, Dan.
 Lin, Tsung{-}Yi, Maire, Michael, Belongie, Serge, Hays, James, Perona, Pietro,
   Ramanan, Deva, Doll{\'{a}}r, Piotr, and Zitnick, C.~Lawrence.
 \newblock Microsoft {COCO:} common objects in context.
-\newblock In \emph{Computer Vision - {ECCV} 2014 - 13th European Conference,
-  Zurich, Switzerland, September 6-12, 2014, Proceedings, Part {V}}, pp.\
-  740--755, 2014.
+\newblock In \emph{ECCV}, 2014.
+
+\bibitem[Ma et~al.(2015)Ma, Lu, and Li]{ma15}
+Ma, Lin, Lu, Zhengdong, and Li, Hang.
+\newblock Learning to answer questions from image using convolutional neural
+  network.
+\newblock \emph{CoRR}, abs/1506.00333, 2015.
 
 \bibitem[Malinowski \& Fritz(2014{\natexlab{a}})Malinowski and
   Fritz]{malinowski14a}
 Malinowski, Mateusz and Fritz, Mario.
 \newblock Towards a visual turing challenge.
-\newblock \emph{CoRR}, abs/1410.8027, 2014{\natexlab{a}}.
-\newblock URL \url{http://arxiv.org/abs/1410.8027}.
+\newblock In \emph{NIPS Workshop on Learning Semantics}, 2014{\natexlab{a}}.
 
 \bibitem[Malinowski \& Fritz(2014{\natexlab{b}})Malinowski and
   Fritz]{malinowski14b}
 Malinowski, Mateusz and Fritz, Mario.
 \newblock A multi-world approach to question answering about real-world scenes
   based on uncertain input.
-\newblock In \emph{Neural Information Processing Systems (NIPS'14)},
-  2014{\natexlab{b}}.
-\newblock URL \url{http://arxiv.org/abs/1410.0210}.
+\newblock In \emph{NIPS}, 2014{\natexlab{b}}.
+
+\bibitem[Malinowski et~al.(2015)Malinowski, Rohrbach, and Fritz]{malinowski15}
+Malinowski, Mateusz, Rohrbach, Marcus, and Fritz, Mario.
+\newblock {Ask Your Neurons: A Neural-based Approach to Answering Questions
+  about Images}.
+\newblock \emph{CoRR}, abs/1505.01121, 2015.
+
+\bibitem[Mao et~al.(2014)Mao, Xu, Yang, Wang, and Yuille]{mao14}
+Mao, Junhua, Xu, Wei, Yang, Yi, Wang, Jiang, and Yuille, Alan~L.
+\newblock Explain images with multimodal recurrent neural networks.
+\newblock \emph{NIPS Deep Learning Workshop}, 2014.
 
 \bibitem[Mikolov et~al.(2013)Mikolov, Chen, Corrado, and Dean]{mikolov13}
 Mikolov, Tomas, Chen, Kai, Corrado, Greg, and Dean, Jeffrey.
 \newblock Efficient estimation of word representations in vector space.
-\newblock \emph{CoRR}, abs/1301.3781, 2013.
-\newblock URL \url{http://arxiv.org/abs/1301.3781}.
-
-\bibitem[Nathan~Silberman \& Fergus(2012)Nathan~Silberman and
-  Fergus]{silberman12}
-Nathan~Silberman, Derek~Hoiem, Pushmeet~Kohli and Fergus, Rob.
-\newblock Indoor segmentation and support inference from rgbd images.
-\newblock In \emph{ECCV}, 2012.
+\newblock In \emph{ICLR}, 2013.
 
 \bibitem[Ordonez et~al.(2011)Ordonez, Kulkarni, and Berg]{ordonez11}
 Ordonez, Vicente, Kulkarni, Girish, and Berg, Tamara~L.
 \newblock Im2text: Describing images using 1 million captioned photographs.
-\newblock In \emph{Neural Information Processing Systems ({NIPS})}, 2011.
+\newblock In \emph{NIPS}, 2011.
 
-\bibitem[Russakovsky et~al.(2014)Russakovsky, Deng, Su, Krause, Satheesh, Ma,
-  Huang, Karpathy, Khosla, Bernstein, Berg, and Fei-Fei]{ilsvrc14}
+\bibitem[Russakovsky et~al.(2015)Russakovsky, Deng, Su, Krause, Satheesh, Ma,
+  Huang, Karpathy, Khosla, Bernstein, Berg, and Fei{-}Fei]{ilsvrc14}
 Russakovsky, Olga, Deng, Jia, Su, Hao, Krause, Jonathan, Satheesh, Sanjeev, Ma,
-  Sean, Huang, Zhiheng, Karpathy, Andrej, Khosla, Aditya, Bernstein, Michael,
-  Berg, Alexander~C., and Fei-Fei, Li.
-\newblock {ImageNet Large Scale Visual Recognition Challenge}.
-\newblock arXiv:1409.0575, 2014.
+  Sean, Huang, Zhiheng, Karpathy, Andrej, Khosla, Aditya, Bernstein,
+  Michael~S., Berg, Alexander~C., and Fei{-}Fei, Li.
+\newblock Imagenet large scale visual recognition challenge.
+\newblock \emph{IJCV}, 2015.
 
-\bibitem[Simonyan \& Zisserman(2014)Simonyan and Zisserman]{simonyan14}
+\bibitem[Silberman et~al.(2012)Silberman, Hoiem, Kohli, and
+  Fergus]{silberman12}
+Silberman, Nathan, Hoiem, Derek, Kohli, Pushmeet, and Fergus, Rob.
+\newblock Indoor segmentation and support inference from {RGBD} images.
+\newblock In \emph{ECCV}, 2012.
+
+\bibitem[Simonyan \& Zisserman(2015)Simonyan and Zisserman]{simonyan14}
 Simonyan, Karen and Zisserman, Andrew.
 \newblock Very deep convolutional networks for large-scale image recognition.
-\newblock \emph{CoRR}, abs/1409.1556, 2014.
-\newblock URL \url{http://arxiv.org/abs/1409.1556}.
+\newblock In \emph{ICLR}, 2015.
 
-\bibitem[Vinyals et~al.(2014)Vinyals, Toshev, Bengio, and Erhan]{vinyals14}
+\bibitem[Vinyals et~al.(2015)Vinyals, Toshev, Bengio, and Erhan]{vinyals14}
 Vinyals, Oriol, Toshev, Alexander, Bengio, Samy, and Erhan, Dumitru.
 \newblock Show and tell: {A} neural image caption generator.
-\newblock \emph{CoRR}, abs/1411.4555, 2014.
-\newblock URL \url{http://arxiv.org/abs/1411.4555}.
+\newblock In \emph{CVPR}, 2015.
 
 \bibitem[Wu \& Palmer(1994)Wu and Palmer]{wu94}
 Wu, Zhibiao and Palmer, Martha.
 \newblock Verb semantics and lexical selection.
-\newblock In \emph{In Proceedings of the 32nd Annual Meeting of the Association
-  for Computational Linguistics}, pp.\  133--138, 1994.
+\newblock In \emph{ACL}, 1994.
 
 \bibitem[Xu et~al.(2015)Xu, Ba, Kiros, Cho, Courville, Salakhutdinov, Zemel,
   and Bengio]{xu15}
-Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Cho, Kyunghyun, Courville, Aaron,
+Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Cho, Kyunghyun, Courville, Aaron~C.,
   Salakhutdinov, Ruslan, Zemel, Richard~S., and Bengio, Yoshua.
-\newblock {Show, Attend and Tell: Neural Image Caption Generation with Visual
-  Attention}.
-\newblock \emph{ArXiv e-prints}, February 2015.
+\newblock Show, attend and tell: Neural image caption generation with visual
+  attention.
+\newblock In \emph{ICML (to appear)}, 2015.
 
 \end{thebibliography}

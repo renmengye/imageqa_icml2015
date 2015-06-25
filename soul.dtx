@@ -1,0 +1,1194 @@
+% \iffalse
+%% File: soul.dtx  Copyright (C) 1998--2003  Melchior FRANZ
+%% $Id: soul.dtx,v 1.128 2003/11/17 22:57:24 m Rel $
+%% $Version: 2.4 $
+%
+%<*batchfile>
+%
+% on Unix/Linux just run "make" to get the style file and the documentation,
+% else generate the driver soul.ins (if you don't already have it):
+%
+%     $ latex soul.dtx
+%
+% You'll probably get an error message that you may ignore. Now generate
+% the style file:
+%
+%     $ tex soul.ins
+%
+% And finally to produce the documentation run LaTeX three times:
+%
+%     $ latex soul.dtx
+%
+%
+%
+%
+% DISCLAIMER: note that a Makefile could actually contain malign commands
+% that erase your whole account, so having a look at it before won't hurt!
+% I take no responsibility for any damage, but I do what I can to make
+% using the original Makefile safe.
+%
+% COPYRIGHT NOTICE:
+% This package is free software that can be redistributed and/or modified
+% under the terms of the LaTeX Project Public License as specified
+% in the file macros/latex/base/lppl.txt on any CTAN archive server,
+% such as ftp://ftp.dante.de/.
+%
+%$
+%% ====================================================================
+%%  @LaTeX-package-file{
+%%     author          = "Melchior FRANZ",
+%%     version         = "2.4",
+%%     date            = "17 November 2003",
+%%     filename        = "soul.dtx",
+%%     address         = "Melchior FRANZ
+%%                        Rieder Hauptstrasse 52
+%%                        A-5212 SCHNEEGATTERN
+%%                        AUSTRIA",
+%%     telephone       = "++43 7746 3109",
+%%     URL             = "http://www.unet.univie.ac.at/~a8603365/",
+%%     email           = "a8603365@unet.univie.ac.at",
+%%     codetable       = "ISO/ASCII",
+%%     keywords        = "spacing out, letterspacing, underlining, striking out,
+%%                        highlighting",
+%%     supported       = "yes",
+%%     docstring       = "This article describes the `soul' package, which
+%%                        provides hyphenatable letterspacing (spacing out),
+%%                        underlining, and some derivatives.
+%%                        All features are based upon a common mechanism
+%%                        that allows to typeset text syllable by syllable,
+%%                        where the excellent TeX hyphenation algorithm is
+%%                        used to find the proper hyphenation points.
+%%                        Two examples show how to use the provided interface to
+%%                        implement things such as `an-a-lyz-ing syl-la-bles'.
+%%                        Although the package is optimized for LaTeX2e,
+%%                        it works with Plain TeX and with other
+%%                        packages, too.",
+%%  }
+%% ====================================================================
+%
+%
+%
+%
+%
+\begin{filecontents}{soul.ins}
+\def\batchfile{soul.ins}
+\input docstrip.tex
+\askforoverwritefalse
+\keepsilent   % <-- this is for you, Christina   ;-)
+\generate{\file{soul.sty}{\from{soul.dtx}{package}}}
+\endbatchfile
+\end{filecontents}
+%</batchfile>
+%
+%
+%
+%
+%
+%<*driver>
+\def\fileversion{2.4}
+\def\filedate{2003/11/17}
+%
+%
+%
+\documentclass{ltxdoc}
+%
+%
+%
+\makeatletter\let\SOUL@sethyphenchar\relax\makeatother
+\IfFileExists{soul.sty}{%
+    \usepackage{soul}[2002/01/10]
+    \expandafter\ifx\csname sloppyword\endcsname\relax  % old version?
+        \def\sloppyword{\textbf{?? [obsolete soul version]}}
+    \fi
+    \let\SOULSTYfound\active
+}{%
+    \GenericWarning{soul.dtx}{%
+        Package file `soul.sty' couldn't be found. You should however find^^J^^A
+        a file `soul.ins' in the current directory. If you type "tex soul.ins"^^J^^A
+        on the command line, `soul.sty' will be generated. After that
+        run "latex soul.dtx" again and you won't see this message again.
+    }%
+}%
+%
+%
+%
+\ifx\makehyperref\SOULundefined
+    \newcommand*\texorpdfstring[2]{#1}
+\else   ^^A for "make hyper"
+    \usepackage{hyperref}
+    \hypersetup{
+        bookmarksopen,
+        colorlinks,
+        pdftitle={The soul package},
+        pdfauthor={Melchior FRANZ},
+        pdfsubject={${}$Id: soul.dtx,v 1.128 2003/11/17 22:57:24 m Rel ${}$},
+        pdfkeywords={space out, letterspacing, underlining, overstriking, highlighting}
+    }
+    \usepackage[pdftex]{graphicx,color}
+\fi
+%
+%
+%
+%\RecordChanges
+%
+\begin{document}
+\setcounter{tocdepth}{2}
+\DocInput{soul.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+%
+%
+%
+%
+%
+%
+% \CheckSum{2006}
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+%
+% \title{The \texttt{soul} package}
+%
+% \author{Melchior \caps{FRANZ}}
+%
+% \date{November 17, 2003}
+%
+%^^A=====================================================
+%
+%^^A  These messy macros allow to typeset the `example' sections
+%^^A  conveniently. You'd better ignore them. I do!   :-)
+%
+% \makeatletter
+%
+% \def\squarebull{\rule[.2ex]{.8ex}{.8ex}}
+%
+% \newenvironment{examples}
+%   {\parindent\z@\small\fontencoding{OT1}\selectfont}
+%   {\rule{\hsize}{.4pt}}
+%
+% \def\soultest#1|{\bgroup\rule[.5ex]{\hsize}{.4pt}\par
+%   \parbox[t]{.34\hsize}{\raggedright\textit{#1\unskip.}}%
+%   \hspace{1.5em}$\vtop\bgroup\hb@xt@.4\hsize\bgroup
+%   \llap{\squarebull\hspace{.4em}}\soulttest}
+%
+% {\catcode`\|=13\gdef\soulttest{%
+%   \bgroup\def\do##1{\catcode`##1=12}\dospecials\ttfamily
+%   \catcode`\|=13\unskip\def|{\hss\egroup\egroup\soultttest}}}
+%
+% \def\soultttest#1{\hbox{\vtop{\hsize.4\hsize\hbadness\@M
+%   \leavevmode\llap{\squarebull\hspace{.4em}}#1\null}}%
+%   \egroup$\hspace{1.5em}\parbox[t]{1mm}{\hyphenpenalty-\@M
+%   \exhyphenpenalty-\@M\hbadness\@M\hfuzz\maxdimen
+%   \strut\llap{\squarebull\hspace{.4em}}#1\null}%
+%   \goodbreak\vspace{2ex}
+%   \egroup}
+%
+% \newcommand*\DescribeOption[1]{\marginpar{\raggedleft\textsf{#1}\ignorespaces}}
+%
+%
+%^^A  similar to the `description' environment
+%
+% \def\describemacro{^^A
+%   \bgroup
+%   \let\do\@makeother
+%   \dospecials
+%   \catcode`{=1
+%   \catcode`}=2
+%   \SOUL@@@descmacro
+% }
+%
+% \def\SOUL@@@descmacro#1{^^A
+%   \texttt{#1}^^A
+%   \DescribeMacro{#1}^^A
+%   \expandafter\edef\expandafter\x\expandafter{\expandafter\@gobble#1}^^A
+%   \expandafter\label{cmd:\x}^^A
+%   \egroup
+% }
+%
+%
+% \def\SOUL@@@verbitem[#1: {^^A
+%   \bgroup
+%   \let\do\@makeother
+%   \dospecials
+%   \SOUL@@@verbscan{#1}^^A
+% }
+%
+% \def\SOUL@@@verbscan#1#2]{^^A
+%   \egroup
+%   \goodbreak
+%   \def\@currentlabel{\S\,\the\SOUL@@@itemnr}^^A
+%   \label{par:#1}^^A
+%   \SOUL@@@item[\textbf{\@currentlabel\hskip.6em#1:}]\hfil\break
+%   Example: \texttt{#2}\hfil\break^^A
+%   \advance\SOUL@@@itemnr1
+% }
+%
+% \let\SOUL@@@item\item
+% \newcount\SOUL@@@itemnr
+%
+% \newenvironment{verblist}[1]{^^A
+%   \SOUL@@@itemnr=#1
+%   \list{}{^^A
+%       \settowidth{\labelwidth}{\indent\indent}^^A
+%       \leftmargin\labelwidth
+%       \advance\leftmargin\labelsep
+%       \def\makelabel##1{##1}^^A
+%       \let\item\SOUL@@@verbitem
+%   }^^A
+% }{^^A
+%   \endlist
+% }
+%
+% \newenvironment{labeling}[1]{^^A
+%   \list{}{^^A
+%       \settowidth{\labelwidth}{\textbf{#1}}^^A
+%       \leftmargin\labelwidth\advance\leftmargin\labelsep
+%       \def\makelabel##1{\textbf{##1}\hfil}^^A
+%   }^^A
+% }{^^A
+%   \endlist
+% }
+%
+% \newenvironment{syntax}{^^A
+%   \par\medskip\def\<##1>{$\langle$\syn{##1}$\rangle$}^^A
+%       \indent\begin{tabular}{l}^^A
+%   }{^^A
+%       \end{tabular}^^A
+%       \noindentafter\medbreak
+%   }
+%
+%
+% \newenvironment{example}[1][.9\textwidth]
+%   {\par\medskip\indent\begin{tabular}{p{#1}l}}
+%   {\end{tabular}\noindentafter\medbreak}
+%
+% \newcommand*\noindentafter{^^A
+%   \global\everypar{{\setbox\z@\lastbox}\everypar{}}}
+%
+% \newcommand*\errsquare{\leavevmode\vrule height.8em depth.2em width1em\relax}
+%
+%
+% \ifx\SOULSTYfound\active
+%^^A  analyze syllables---described somewhere below
+%
+% \DeclareRobustCommand*\sy{^^A
+%   \SOUL@setup
+%   \def\SOUL@preamble{\lefthyphenmin0\righthyphenmin0}^^A
+%   \def\SOUL@everysyllable{\the\SOUL@syllable}^^A
+%   \def\SOUL@everyspace##1{##1\space}^^A
+%   \def\SOUL@everyhyphen{^^A
+%       \discretionary{^^A
+%           \SOUL@setkern\SOUL@hyphkern
+%           \SOUL@sethyphenchar
+%       }{}{^^A
+%           \hbox{\kern1pt$\cdot$}^^A
+%       }^^A
+%   }^^A
+%   \def\SOUL@everyexhyphen##1{^^A
+%       \SOUL@setkern\SOUL@hyphkern
+%       \hbox{##1}^^A
+%       \discretionary{}{}{^^A
+%           \SOUL@setkern\SOUL@charkern
+%       }^^A
+%   }^^A
+%   \SOUL@}
+%
+%^^A  analyze the engine---described somewhere below, too
+%
+% \DeclareRobustCommand*\an{^^A
+%   \def\SOUL@preamble{$^{^P}$}^^A
+%   \def\SOUL@everyspace##1{##1\texttt{\char`\ }}^^A
+%   \def\SOUL@postamble{$^{^E}$}^^A
+%   \def\SOUL@everyhyphen{$^{^-}$}^^A
+%   \def\SOUL@everyexhyphen##1{##1$^{^=}$}^^A
+%   \def\SOUL@everysyllable{$^{^S}$}^^A
+%   \def\SOUL@everytoken{\the\SOUL@token$^{^T}$}^^A
+%   \def\SOUL@everylowerthan{$^{^L}$}^^A
+%   \SOUL@}
+%
+%^^A  magazine-like (truly awful) paragraphs
+%^^A  If you know what you're doing, you can copy it to your personal `soul.cfg' file.
+%
+%  \DeclareRobustCommand*\magstylepar{\SOUL@sosetup
+%    \def\SOUL@preamble{^^A
+%      \edef\SOUL@soletterskip{\z@\@plus\fontdimen2\font\@minus\z@}^^A
+%      \edef\SOUL@soinnerskip{\the\fontdimen2\font
+%        \@plus\the\fontdimen3\font\@minus\the\fontdimen4\font}^^A
+%      \let\SOUL@soouterskip\SOUL@soinnerskip
+%      \SOUL@sopreamble}^^A
+%    \lefthyphenmin2\righthyphenmin2\SOUL@}
+%
+%\else
+%
+%^^A  The package has not been found, so we're providing some dummies, just
+%^^A  to avoid all these `Undefined command sequence' messages.
+%
+%   \def\SOUL@@@X#1{\textbf{??}}%
+%   \let\so\SOUL@@@X
+%   \let\textso\SOUL@@@X
+%   \let\caps\SOUL@@@X
+%   \let\textcaps\SOUL@@@X
+%   \let\ul\SOUL@@@X
+%   \let\textul\SOUL@@@X
+%   \let\st\SOUL@@@X
+%   \let\textst\SOUL@@@X
+%   \let\hl\SOUL@@@X
+%   \let\texthl\SOUL@@@X
+%   \let\sy\SOUL@@@X
+%   \let\an\SOUL@@@X
+%   \let\magstylepar\SOUL@@@X
+%   \let\sloppyword\SOUL@@@X
+%   \def\sodef#1#2#3#4{\let#1\relax\SOUL@@@X}%
+% \fi
+%
+% \newcommand*\xpath{^^A
+%   \bgroup
+%   \let\do\@makeother
+%   \dospecials
+%   \catcode`\{=1
+%   \catcode`\}=2
+%   \def\{{\char"7B}^^A
+%   \def\}{\char"7D}^^A
+%   \SOUL@@@code
+% }
+%
+% \newcommand*\SOUL@@@code[1]{\normalfont\texttt{#1}\egroup}
+%
+% \let\cs\xpath
+% \let\option\textsf
+% \def\package#1{{\normalfont\texttt{#1}}}
+% \let\program\texttt
+% \let\bibtitle\textit
+% \let\syn\textit
+%
+% \sodef\person{\scshape}{0.06em}{0.45em}{0.4em}
+% \sodef\SOUL@@@versal{\upshape}{0.125em}{0.4583em}{0.5833em}
+% \DeclareRobustCommand*\versal[1]{^^A
+%   \MakeUppercase{\SOUL@@@versal{#1}}^^A
+% }
+%
+% \def\ConTeXt{Con\TeX t}
+% \def\CTAN{{\small\caps{CTAN}}}
+% \def\soul{\package{soul}}
+%
+% ^^A  set some parameters as used in Plain TeX
+% \def\plainsetup{^^A
+%   \pretolerance100
+%   \tolerance200
+%   \hbadness1000
+%   \linepenalty10
+%   \hyphenpenalty50
+%   \exhyphenpenalty50
+%   \doublehyphendemerits10000
+%   \finalhyphendemerits5000
+%   \adjdemerits10000
+%   \hfuzz.1pt
+%   \overfullrule5pt
+% }
+%
+% \def\FIXME#1{\message{<FIXME>}#1}
+%
+% \makeatother
+%
+%
+% \lefthyphenmin2
+% \righthyphenmin3
+% \hyphenation{Le-se-ty-po-gra-phie Ver-bin-dung fak-si-mi-le}
+%
+%
+%^^A=====================================================
+%
+%
+% \changes{v1.0}{1998/10/16}{Initial version}%
+%^^A  due to an error in the documentation of v1.0, there's no v1.1    :-(
+% \changes{v1.1a}{1998/12/08}{fixed a bunch of bugs; `magstylepar command
+%   banned; `caps introduced; `so and `caps recognize following spaces;
+%   error message added; `so parameters are mandatory}
+%
+% \changes{v1.2}{1999/01/11}{fixed the newline bug; added the `\(>\) command}
+%
+% \changes{v1.3}{1999/05/15}{changed allowhyphen, preambles; added a paragraph
+%   in the `features' section}
+%
+% \changes{v2.0}{2002/01/03}{(almost) complete rewrite}
+%
+% \changes{v2.1}{2002/01/10}{Happy (64th) birthday, Don!
+%   ``The now-traditional fix for the
+%   now-traditional brown-paper-bag major release.''
+%   as Eric S. RAYMOND commented on his CML2.0.1 release. ;-)}
+%
+% \changes{v2.2}{2002/05/12}{fixed a couple of bugs; added support for
+%   the Plain TeX color.sty wrapper}
+%
+% \changes{v2.3}{2002/05/29}{compatibility with cmbright/ccfonts}
+%
+% \changes{v2.4}{2003/11/17}{Fix the font bug. Fix a scanner bug.
+%   Other bugfixes; change caps set handling; add footnote and
+%   textsuperscript support}
+%
+%
+%
+%
+%
+% \maketitle
+%
+%
+%
+% \begin{abstract}
+% This article describes the \soul\ package^^A
+%^^A%%
+%   \footnote{This file has version number \fileversion, last revised \filedate.},
+%^^A%%
+% which provides \so{hyphenatable letterspacing (spacing out),} \ul{underlining}
+% and some derivatives such as \st{overstriking} and highlighting.
+% Although the package is optimized for \LaTeXe, it also works with
+% Plain \TeX\ and with other flavors of \TeX\ like, for instance, \ConTeXt.
+% By the way, the package name |soul| is only a combination
+% of the two macro names \cs{\so} (space out) and \cs{\ul}
+% (underline)---nothing poetic at all.^^A  :-(
+% \end{abstract}
+%
+%
+% {\setlength\parskip{0pt}\tableofcontents }
+% \addtocontents{toc}{\protect\begin{multicols}{2}}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% \section{Typesetting rules}
+% \label{sec:typesetting}
+%
+% There are several possibilities to emphasize parts of a paragraph,
+% not all of which are considered good style. While underlining
+% is commonly rejected, experts dispute about whether letterspacing
+% should be used or not, and in which cases. If you are not interested
+% in such debates, you may well skip to the next section.
+%
+%
+% \subsection*{Theory \dots}
+% \label{sec:theory}
+%
+% To understand the experts' arguments we have to know about the
+% conception of \emph{page grayness.} The sum of all characters on
+% a page represents a certain amount of grayness, provided that
+% the letters are printed black onto white paper.
+%
+% \person{Jan Tschichold} \cite{Tschichold}, a well known and recognized
+% typographer, accepts only forms of emphasizing, which do not disturb this
+% grayness. This is only true of italic shape, caps, and
+% caps-and-small-caps fonts, but not of ordinary letterspacing, underlining,
+% bold face type and so on, all of which appear as either dark or light
+% spots in the text area. In his opinion emphasized text shall not catch the eye when
+% running over the text, but rather when actually reading the respective words.
+%
+% Other, less restrictive typographers \cite{Willberg} call this kind of emphasizing
+% `integrated' or `aesthetic', while they describe `active' emphasizing apart from it,
+% which actually \emph{has} to catch the reader's eye. To the latter group belong commonly
+% despised things like letterspacing, demibold face type and even underlined and colored text.
+%
+% On the other hand, \person{Tschichold} suggests
+% to space out caps and caps-and-small-caps fonts on title pages, headings and running headers from
+% 1\,pt up to 2\,pt.
+% Even in running text legibility of uppercase letters should be improved with slight
+% letterspacing, since (the Roman) majuscules don't look right, if they are spaced
+% like (the Carolingian) minuscules.\footnote{This suggestion is followed throughout this article,
+% although Prof.~\person{Knuth} already considered slight letterspacing with his |cmcsc| fonts.}
+%
+%
+%
+%\subsection*{\dots\ and Practice}
+%
+% However, in the last centuries letterspacing was excessively used,
+% underlining at least sometimes, because capitals and italic shape could
+% not be used together with the \emph{Fraktur} font and other black-letter fonts,
+% which are sometimes also called ``old German'' fonts.
+% This tradition is widely continued until today. The same limitations apply still today
+% to many languages with non-latin glyphs, which is why letterspacing has a strong
+% tradition in eastern countries where Cyrillic fonts are used.
+%
+% The \person{Duden} \cite{Duden}, a well known German dictionary, explains how to space out properly:
+% \emph{Punctuation marks are spaced out like letters, except quotation marks and periods.
+% Numbers are never spaced out. The German syllable \mbox{\emph{-sche}} is not spaced
+% out in cases like \emph{``der {\so{Virchow{sche}}} Versuch''}\footnote{the \person{Virchow} experiment}.
+% In the old German \emph{Fraktur} fonts the ligatures \emph{|ch|, |ck|, |sz|~(\ss)} and~\emph{|tz|} are
+% not broken within spaced out text.}
+%
+% While some books follow all these rules \cite{Muszynski}, others don't
+% \cite{Reglement}. In fact, most books in my personal library do \emph{not} space out commas.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% \section{Short introduction and common rules}
+%
+% The \soul\ package provides five commands that are aimed at emphasizing
+% text parts. Each of the commands takes one argument that can either be
+% the text itself or the name of a macro that contains text (e.\,g.~|\so\text|)^^A
+% ^^A
+% \footnote{See~\ref{par:Unexpandable material in command sequences} for
+%    some additional information about the latter mode.}^^A
+% ^^A
+% .
+% See table~\ref{tab:survey} for a complete command survey.
+%
+% {\catcode`\|=12
+% \begin{center}
+% \begin{tabular}{r@{\hspace{1.5em}}l}
+% \verb+\so{letterspacing}+&\so{letterspacing}\\
+% \verb+\caps{CAPITALS, Small Capitals}+&\caps{CAPITALS, Small Capitals}\\
+% \verb+\ul{underlining}+&\ul{underlining}\\
+% \verb+\st{overstriking}+&\st{overstriking}\\
+% \verb+\hl{highlighting}+&highlighting\footnotemark\\
+% \end{tabular}
+% \end{center}
+% \footnotetext{The look of highlighting is nowhere demonstrated
+%   in this documentation, because it requires a Postscript aware
+%   output driver and would come out as ugly black bars on other
+%   devices, looking very much like censoring bars. Think of it as
+%   the effect of one of those coloring text markers.}
+% }
+%
+% \noindent
+% The \cs{\hl} command does only highlight if the \package{color} package
+% was loaded, otherwise it falls back to underlining.\footnote{Note that
+% you can also use \LaTeX's \package{color} package with Plain \TeX.
+% See~\ref{sec:plain} for details.} The highlighting
+% color is by default yellow, underlines and overstriking lines are by
+% default black. The colors can be changed using the following commands:
+%
+% {\catcode`\|=12
+% \begin{center}
+% \begin{tabular}{r@{\hspace{1.5em}}l}
+% \verb+\setulcolor{red}+&set underlining color\\
+% \verb+\setstcolor{green}+&set overstriking color\\
+% \verb+\sethlcolor{blue}+&set highlighting color\\
+% \end{tabular}
+% \end{center}
+% }
+%
+% \noindent
+% |\setulcolor{}| and |\setstcolor{}|  turn coloring off.
+% There are only few colors predefined by the \package{color}
+% package, but you can easily add custom color definitions.
+% See the \package{color} package documentation~\cite{color} for further
+% information.
+%
+% \begin{example}
+% |\usepackage{color,soul}|\\
+% |\definecolor{lightblue}{rgb}{.90,.95,1}|\\
+% |\sethlcolor{lightblue}|\\
+% |...|\\
+% |\hl{this is highlighted in light blue color}|\\
+% \end{example}
+%
+%
+%
+%
+%
+%
+%
+% \subsection[Some things work]{Some things work \dots}
+%
+% The following examples may look boring and redundant, because they describe
+% nothing else than common \LaTeX\ notation with a few exceptions, but this is
+% only the half story: The \soul\ package has to pre-process the argument
+% before it can split it into characters and syllables, and all described
+% constructs are only allowed because the package explicitly implements them.
+%
+% \begin{verblist}{1}
+% \item[Accents: \so{na\"\i ve}]
+%   Accents can be used naturally.
+%   Support for the following accents is built-in: |\`|, |\'|, |\^|, |\"|, |\~|,
+%   |\=|, |\.|, |\u|, |\v|, |\H|, |\t|, |\c|, |\d|, |\b|, and |\r|. Additionally,
+%   if the \package{german} package \cite{german} is loaded you can also use the |"|
+%   accent command and write |\so{na"ive}|. See section~\ref{sec:soulaccent} for how to add
+%   further accents.
+% \item[Quotes: \so{``quotes''}]
+%   The \soul\ package recognizes the quotes ligatures |``|, |''| and |,,|.
+%   The Spanish ligatures |!`| and |?`| are not recognized and have, thus,
+%   to be written enclosed in braces like in |\caps{{!`}Hola!}|.
+% \item[Mathematics: \so{foo$x^3$bar}]
+%   Mathematic formulas are allowed, as long as they are
+%   surrounded by~\texttt\$. Note that the \LaTeX\
+%   equivalent |\(...\)| does not work.
+% \item[Hyphens and dashes: \so{re-sent}]
+%   Explicit hyphens as well as en-dashes~(|--|), em-dashes~(|---|)
+%   and the |\slash| command work as usual.
+% \item[Newlines: \so{new\\line}]
+%   The |\\|~command fills the current line with white space
+%   and starts a new line. Spaces or linebreaks afterwards are ignored.
+%   Unlike the original \LaTeX\ command \soul's version does not handle
+%   optional parameters like in |\\*[1ex]|.
+% \item[Breaking lines: \so{foo\linebreak bar}]
+%   The \cs{\linebreak} command breaks the line without
+%   filling it with white space at the end. \soul's version
+%   does not handle optional parameters like in |\linebreak[1]|.
+%   \cs{\break} can be used as a synonym.
+% \item[Unbreakable spaces: \so{don't~break}]
+%   The |~|~command sets an unbreakable space.
+% \item[Grouping: \so{Virchow{sche}}]
+%   A pair of braces can be used to let a group of characters
+%   be seen as one entity, so that \soul\ does
+%   for instance not space it out. The contents must, however,
+%   not contain potential hyphenation points. (See~\ref{par:Protecting})
+% \item[Protecting: \so{foo \mbox{little} bar}]
+%   An \cs{\mbox} also lets \soul\ see the contents as one
+%   item, but these may even contain hyphenation points. \cs{\hbox} can
+%   be used as a synonym.
+% \item[Omitting: \so{\soulomit{foo}}]
+%   The contents of \cs{\soulomit} bypass the soul core and are typeset
+%   as is, without being letterspaced or underlined. Hyphenation points are
+%   allowed within the argument. The current font remains active, but can be
+%   overridden with \cs{\normalfont} etc.
+% \item[Font switching commands: \so{foo \texttt{bar}}]
+%   All standard \TeX\ and \LaTeX\ font switching commands are allowed, as
+%   well as the \package{yfonts} package \cite{yfonts} font commands like \cs{\textfrak} etc.
+%   Further commands have to be registered using the \cs{\soulregister}
+%   command (see section~\ref{sec:soulregister}).
+% \item[Breaking up ligatures: \ul{Auf{}lage}]
+%   Use |{}| or \cs{\null} to break up ligatures like `fl' in \cs{\ul}, \cs{\st} and \cs{\hl}
+%   arguments.
+%   This doesn't make sense for \cs{\so} and \cs{\caps}, though, because they break up
+%   every unprotected (ungrouped\slash unboxed) ligature, anyway, and would
+%   then just add undesirable extra space around the additional item.
+% \end{verblist}
+%
+%
+%
+%
+% \subsection{\texorpdfstring{\dots\ }{... }others don't}
+%
+% Although the new \soul\ is much more robust and forgiving than
+% versions prior to~2.0, there are
+% still some things that are not allowed in arguments.
+% This is due to the complex engine, which has to read and inspect every
+% character before it can hand it over to \TeX's paragraph builder.
+%
+% \begin{verblist}{20}
+% \item[Grouping hyphenatable material: \so{foo {little} bar}]
+%   Grouped characters must not contain hyphenation points. Instead of
+%   |\so{foo {little}}| write |\so{foo \mbox{little}}|. You get a
+%   \texttt{`Re\-con\-struction failed'} error and a black square like
+%   \errsquare\ in the \caps{DVI} file where you violated this rule.
+% \item[Discretionary hyphens: \so{Zu\discretionary{k-}{}{c}ker}]
+%   The argument must not contain discretionary hyphens. Thus, you have to
+%   handle cases like the German word |Zu\discretionary{k-}{}{c}ker| by yourself.
+% \item[Nested soul commands: \ul{foo \so{bar} baz}]
+%   \soul\ commands must not be nested. If you really
+%   need such, put the inner stuff in a box and use this box. It will, of
+%   course, not get broken then.\\
+%   \null\qquad|\newbox\anyboxname|\\
+%   \null\qquad|\sbox\anyboxname{ \so{the worst} }|\\
+%   \null\qquad|\ul{This is by far{\usebox\anyboxname}example!}|\\
+%   yields:\\
+%   \newbox\anyboxname
+%   \sbox\anyboxname{ \so{the worst} }
+%   \null\qquad\ul{This is by far{\usebox\anyboxname}example!}
+% \item[Leaking font switches: \def\foo{\bf bar} \so{\foo baz}]
+%   A hidden font switching command that leaks into its neighborship
+%   causes a \texttt{`Reconstruction failed'} error. To avoid this either
+%   register the `container' (|\soulregister{\foo}{0}|), or limit its
+%   scope as in |\def\foo{{\bf bar}}|. Note that both
+%   solutions yield slightly different results.
+% \item[Material that needs expansion: \so{\romannumeral\year}]
+%   In this example \cs{\so} would try to put space between \cs{\romannumeral}
+%   and \cs{\year}, which can, of course, not work.
+%   You have to expand the argument before you feed it to \soul, or even better:
+%   Wrap the material up in a command sequence and let \soul\ expand it:
+%   |\def\x{\romannumeral\year}| |\so\x|. \soul\ tries hard to expand
+%   enough, yet not too much.
+% \item[Unexpandable material in command sequences: \def\foo{\bar} \so\foo]
+%   Some macros might not be expandable in an \cs{\edef} definition^^A
+%   \footnote{Try \texttt{\string\edef\string\x\char`\{\string\copyright\char`\}}.
+%   Yet \texttt{\string\copyright} works in \soul\ arguments, because it is
+%   explicitly taken care of by the package}
+%   and have to be protected with \cs{\noexpand} in front. This is automatically done
+%   for the following tokens: |~|, \cs{\,}, \cs{\TeX}, \cs{\LaTeX},
+%   \cs{\S}, \cs{\slash}, \cs{\textregistered}, \cs{\textcircled}, and \cs{\copyright},
+%   as well as for all registered fonts and accents. Instead of putting \cs{\noexpand}
+%   manually in front of such commands, as in |\def\foo{foo {\noexpand\bar} bar}| |\so\foo|,
+%   you can also register them as special (see section \ref{sec:soulregister}).
+% \item[Other weird stuff: \so{foo \verb|\bar| baz}]
+%   \soul\ arguments must not contain \LaTeX\ environments, command definitions,
+%   and fancy stuff like |\vadjust|. \soul's |\footnote| command replacement
+%   does not support optional arguments. As long as you are writing simple,
+%   ordinary `horizontal' material, you are on the safe side.
+% \end{verblist}
+%
+%
+%
+%
+%
+%
+%
+% \begin{table}
+% \begin{center}
+% \catcode`\|=12
+% \newcommand*\pref[1]{{\footnotesize\pageref{cmd:#1}}}
+% \newcommand*\Ast{\rlap{$^\ast$}}
+% \let\m\cs
+% \let\ti\textit
+% \begin{tabular}{r@{\hspace{.6em}}c@{\hspace{.6em}}l}
+% &\hbox to0pt{\hss\footnotesize page\hss}&\\[.5ex]
+% \verb+\so{letterspacing}+&                \pref{so}           &\so{letterspacing}\\
+% \verb+\caps{CAPITALS, Small Capitals}+&   \pref{caps}         &\caps{CAPITALS, Small Capitals}\\
+% \verb+\ul{underlining}+&                  \pref{ul}           &\ul{underlining}\\
+% \verb+\st{striking out}+&                 \pref{st}           &\st{striking out}\\
+% \verb+\hl{highlighting}+&                 \pref{hl}           &highlighting\\
+% \\
+% \verb+\soulaccent{\cs}+&                  \pref{soulaccent}   &\ti{add accent} \cs{\cs} \ti{to accent list}\\
+% \verb+\soulregister{\cs}{0}+&             \pref{soulregister} &\ti{register command} \m{\cs}\\
+% \verb+\sloppyword{text}+&                 \pref{sloppyword}   &\ti{typeset} \m{text} \ti{with stretchable spaces}\\
+% \\
+% \verb+\sodef\cs{1em}{2em}{3em}+&          \pref{sodef}        &\ti{define new spacing command} \m{\cs}\\
+% \verb+\resetso+&                          \pref{resetso}      &\ti{reset} \m{\so} \ti{dimensions}\\
+% \verb+\capsdef{////}{1em}{2em}{3em}+\Ast& \pref{capsdef}      &\ti{define (default)} \m{\caps} \ti{data entry}\\
+% \verb+\capssave{name}+\Ast&               \pref{capssave}     &\ti{save} \m{\caps} \ti{database under name} \rlap{\texttt{name}}\\
+% \verb+\capsselect{name}+\Ast&             \pref{capssave}     &\ti{restore} \m{\caps} \ti{database of name} \rlap{\texttt{name}}\\
+% \verb+\capsreset+\Ast&                    \pref{capsreset}    &\ti{clear caps database}\\
+% \verb+\setul{1ex}{2ex}+&                  \pref{setul}        &\ti{set} \m{\ul} \ti{dimensions}\\
+% \verb+\resetul+&                          \pref{resetul}      &\ti{reset} \m{\ul} \ti{dimensions}\\
+% \verb+\setuldepth{y}+&                    \pref{setuldepth}   &\ti{set underline depth to depth of an} y\\
+% \verb+\setuloverlap{1pt}+&                \pref{setuloverlap} &\ti{set underline overlap width}\\
+% \verb+\setulcolor{red}+&                  \pref{setulcolor}   &\ti{set underline color}\\
+% \verb+\setstcolor{green}+&                \pref{setstcolor}   &\ti{set overstriking color}\\
+% \verb+\sethlcolor{blue}+&                 \pref{sethlcolor}   &\ti{set highlighting color}\\
+% \end{tabular}
+% \caption{List of all available commands. The number points to the
+%          page where the command is described. Those marked
+%          with a little asterisk are only available when the package
+%          is used together with \LaTeX, because they rely on the
+%          \emph{New Font Selection Scheme (NFSS)} used in \LaTeX.}
+% \label{tab:survey}
+% \end{center}
+% \end{table}
+%
+%
+%
+%
+%
+%
+%
+% \subsection{Troubleshooting}
+%
+% Unfortunately, there's just one helpful error message provided by
+% the \soul\ package, that actually describes the underlying problem. All other
+% messages are generated directly by \TeX\ and show the low-level
+% commands that \TeX\ wasn't happy with. They'll hardly point you
+% to the violated rule as described in the paragraphs above.
+% If you get such a mysterious error message for a line that contains
+% a \soul\ statement, then comment that statement out and see if the message
+% still appears.
+% \texttt{`Incomplete }\cs{\ifcat}\texttt{'} is such a non-obvious message.
+% If the message doesn't appear now, then check the argument for
+% violations of the rules as listed in~\S\S\,20--26.
+%
+%
+%
+% \subsubsection{\texttt{`Reconstruction failed'}}
+%
+% This message appears, if \ref{par:Grouping hyphenatable material} or
+% \ref{par:Leaking font switches} was
+% violated. It is caused by the fact that the reconstruction pass
+% couldn't collect tokens with an overall width of the syllable that
+% was measured by the analyzer. This does either occur when you
+% grouped hyphenatable text or used an unregistered command
+% that influences the syllable width. Font switching commands belong
+% to the latter group. See the above cited sections for how to fix
+% these problems.
+%
+%
+%
+% \subsubsection{Missing characters}
+%
+% If you have redefined the internal font as described in section \ref{sec:internalfont},
+% you may notice that some characters are omitted without any error message
+% being shown. This happens if you have chosen, let's say, a font with
+% only 128~characters like the |cmtt10| font, but are using characters
+% that aren't represented in this font, e.\,g.~characters with codes
+% greater than~127.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% \section{\texorpdfstring{\so{Letterspacing}}{Letterspacing}}
+%
+% \subsection{How it works}
+% \label{sec:so}
+%
+% The base macro for letterspacing is called \describemacro{\so}.
+% It typesets the given argument with \syn{inter-letter space}
+% between every two characters, \syn{inner space} between words
+% and \syn{outer space} before and after the spaced out text.
+% If we let ``$\cdot$'' stand for \syn{inter-letter space}, ``$\ast$''
+% for \syn{inner spaces} and ``$\bullet$'' for \syn{outer
+% spaces,} then the input on the left side of the following table
+% will yield the schematic output on the right side:
+%
+% \begin{center}
+% \def\.{$\cdot$}
+% \def\-{\kern1pt$\ast$\kern1pt}
+% \def\*{$\bullet$}
+% \def\_{\texttt{\char"20}}
+% \begin{tabular}{ccc}
+% 1.& \verb*|XX\so{aaa bbb ccc}YY|&            \textsf{XXa\.a\.a\-b\.b\.b\-c\.c\.cYY}\\
+% 2.& \verb*|XX \so{aaa bbb ccc} YY|&          \textsf{XX\*a\.a\.a\-b\.b\.b\-c\.c\.c\*\kern-1ptYY}\\
+% 3.& \verb*|XX {\so{aaa bbb ccc}} YY|&        \textsf{XX\*a\.a\.a\-b\.b\.b\-c\.c\.c\*\kern-1ptYY}\\
+% 4.& \verb*|XX \null{\so{aaa bbb ccc}}{} YY|& \textsf{XX\_a\.a\.a\-b\.b\.b\-c\.c\.c\_YY}\\
+% \end{tabular}
+% \end{center}
+% ^^A* %                     fool vim (fixes syntax highlighting)
+%
+% \noindent
+% Case~1 shows how letterspacing macros (\cs{\so} and \cs{\caps}) behave if
+% they aren't following or followed by a space: they omit outer space around
+% the \soul\ statement. Case~2 is what you'll mostly need---letterspaced
+% text amidst running text. Following and leading space get replaced by
+% \syn{outer space}. It doesn't matter if there are opening braces before
+% or closing braces afterwards. \soul\ can see through both of them (case~3).
+% Note that leading space has to be at least |5sp| wide to be recognized as
+% space, because \LaTeX\ uses tiny spaces generated by |\hskip1sp| as marker.
+% Case~4 shows how to enforce normal spaces instead of \syn{outer spaces:}
+% Preceding space can be hidden by |\kern0pt| or \cs{\null} or any character.
+% Following space can also be hidden by any token, but note that a typical macro name
+% like \cs{\relax} or \cs{\null} would also hide the space thereafter.
+%
+%
+% The values are predefined for typesetting facsimiles mainly with
+% \emph{Fraktur} fonts.
+% You can define your own spacing
+% macros or overwrite the original \cs{\so} meaning using the macro
+% \describemacro{\sodef}:
+%
+% \begin{syntax}
+% |\sodef|\<cmd>|{|\<font>|}{|\<inter-letter space>|}{|\<inner space>|}{|\<outer space>|}|
+% \end{syntax}
+%
+% The space dimensions, all of which are mandatory, should be defined in terms of |em|
+% letting them grow and shrink with the respective fonts.
+%
+% \begin{example}
+% |\sodef\an{}{.4em}{1em plus1em}{2em plus.1em minus.1em}|
+% \end{example}
+%
+% After that you can type `|\an{example}|' to get
+% {\sodef\an{}{.4em}{1em plus1em}{2em plus.1em minus.1em}^^A
+% `\an{example}'.}
+% The \describemacro{\resetso} command resets \cs{\so}
+% to the default values.
+%
+%
+%
+%
+% \subsection{Some examples}
+%
+%^^A=====================================================
+% \begin{examples}
+%
+% \soultest{Ordinary text}
+%   |\so{electrical industry}|
+%   {\so{electrical industry}}
+%
+% \soultest{Use \texttt{\string\-} to mark hyphenation points}
+%   |\so{man\-u\-script}|
+%   {\so{man\-u\-script}}
+%
+% \soultest{Accents are recognized}
+%   |\so{le th\'e\^atre}|
+%   {\so{le th\'e\^atre}}
+%
+% \soultest{\texttt{\string\mbox} and \texttt{\string\hbox} protect material that
+%   contains hyphenation points. The contents are treated as one, unbreakable entity}
+%   |\so{just an \mbox{example}}|
+%   {\so{just an \mbox{example}}}
+%
+% \soultest{Punctuation marks are spaced out, if they are
+%   put into the group}
+%   |\so{inside.} \& \so{outside}.|
+%   {\so{inside.} \& \so{outside}.}
+%
+% \soultest{Space-out skips may be removed by typing \texttt{\string\<}.
+% It's, however, desirable to put the quotation marks out of
+% the argument}
+%   |\so{``\<Pennsylvania\<''}|
+%   {\so{``\<Pennsylvania\<''}}
+%
+% \soultest{Numbers should never be spaced out}
+%   |\so{1\<3 December {1995}}|
+%   {\so{1\<3 December {1995}}}
+%
+% \soultest{Explicit hyphens like |-|, |--| and |---| are recognized.
+%   \texttt{\string\slash} outputs a slash and enables \TeX\ to break the line
+%   afterwards}
+%   |\so{input\slash output}|
+%   {\so{input\slash output}}
+%
+% \soultest{To keep \TeX\ from breaking lines between the hyphen and `jet'
+%   you have to protect the hyphen. This is no \soul\ restriction
+%   but normal \TeX\ behavior}
+%   |\so{\dots and \mbox{-}jet}|
+%   {\so{\dots and \mbox{-}jet}}
+%
+% \soultest{The \texttt{\~} command inhibits line breaks}
+%   |\so{unbreakable~space}|
+%   {\so{unbreakable~space}}
+%
+% \soultest{\texttt{\string\\} works as usual. Additional arguments
+%   like \texttt{*} or vertical space are not accepted, though}
+%   |\so{broken\\line}|
+%   {\so{broken\\line}}
+%
+% \soultest{\texttt{\string\break} breaks the line without filling it with white space}
+%   |\so{pretty awful\break test}|
+%   {\so{pretty awful\break test}}
+%
+% \end{examples}
+%^^A=====================================================
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% \subsection[Typesetting \texorpdfstring{\caps{caps-and-small-caps}}{caps-and-small-caps} fonts]
+%       {Typesetting capitals-and-small-capitals fonts}
+%
+% There is a special letterspacing command called \describemacro{\caps},
+% which differs from \cs{\so} in that it switches to caps-and-small-caps
+% font shape, defines only slight spacing and is able to select spacing
+% value sets from a database. This is a requirement for high-quality
+% typesetting \cite{Tschichold}. The following lines show the effect
+% of \cs{\caps} in comparison with the normal textfont and with
+% small-capitals shape:
+%
+% \def\sampletext{DONAUDAMPFSCHIFFAHRTSGESELLSCHAFT}
+% \medskip\noindent
+% \begin{tabular}{rl}
+% |\normalfont|&\sampletext\\
+% |\scshape|&{\scshape\sampletext}\\
+% |\caps|&\caps\sampletext\\
+% ^^A|\person|&\person\sampletext\\
+% \end{tabular}
+%
+% \medbreak\noindent
+% The \cs{\caps} font database is by default empty, i.\,e., it contains
+% just a single default entry, which yields the result as shown in the
+% example above.
+% New font entries may be added \emph{on top} of this list using the \describemacro{\capsdef}
+% command, which takes five arguments: The first argument describes the font with
+% \emph{encoding, family, series, shape,} and \emph{size,}^^A
+% \footnote{as defined by the \caps{NFSS}, the ``New Font Selection Scheme''}
+% each optionally
+% (e.\,g.~|OT1/cmr/m/n/10| for this very font, or only |/ppl///12| for all
+% \emph{palatino} fonts at size 12\,pt). The \emph{size} entry may also contain
+% a size range (\texttt{5-10}), where zero is assumed for an omitted lower
+% boundary (\texttt{-10}) and a very, very big number for an omitted upper
+% boundary (\texttt{5-}). The
+% upper boundary is not included in the range, so, in the example below, all
+% fonts with sizes greater or equal 5\,pt and smaller than 15\,pt are accepted
+% ($5\,\mbox{pt}\le size<15\,\mbox{pt}$).
+% The second argument may contain font switching commands such as \cs{\scshape},
+% it may as well be empty or contain debugging commands (e.\,g.~|\message{*}|).
+% The remaining three, mandatory arguments are the spaces as described in
+% section~\ref{sec:so}.
+%
+% \begin{example}
+% |\capsdef{T1/ppl/m/n/5-15}{\scshape}{.16em}{.4em}{.2em}|
+% \end{example}
+%
+% The \cs{\caps} command goes through the data list from top to bottom
+% and picks up the first matching set, so the order of definition is essential.
+% The last added entry is examined first, while the pre-defined default entry
+% will be examined last and will match any font, if no entry was taken before.
+%
+% To override the default values, just define a new default entry using
+% the identifier |{////}|. This entry should be defined first, because no
+% entry after it can be reached.
+%
+% The \cs{\caps} database can be cleared with the \describemacro{\capsreset}
+% command and will only contain the default entry thereafter. The
+% \describemacro{\capssave} command saves the whole current database
+% under the given name. \describemacro{\capsselect} restores such a database.
+% This allows to predefine different groups of \cs{\caps} data sets:
+%
+% \begin{example}
+% |\capsreset|\\
+% |\capsdef{/cmss///12}{}{12pt}{23pt}{34pt}|\\
+% |\capsdef{/cmss///}{}{1em}{2em}{3em}|\\
+% |...|\\
+% |\capssave{wide}|\\
+% \end{example}
+% \indent
+% \begin{example}
+% |%---------------------------------------|\\
+% |\capsreset|\\
+% |\capsdef{/cmss///}{}{.1em}{.2em}{.3em}|\\
+% |...|\\
+% |\capssave{narrow}|\\
+% \end{example}
+% \indent
+% \begin{example}
+% |%---------------------------------------|\\
+% |{\capsselect{wide}|\\
+% |\title{\caps{Yet Another Silly Example}}|\\
+% |}|\\
+% \end{example}
+%
+% See the `|example.cfg|' file for a detailed example.
+% If you have defined a bunch of sets for different fonts and sizes,
+% you may lose control over what fonts are used by the package. With the
+% package option \DescribeOption{capsdefault}\option{capsdefault} selected,
+% \cs{\caps} prints its argument underlined, if no set was specified for a
+% particular font and the default set had to be used.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% \subsection{Typesetting Fraktur}
+% \label{sec:fraktur}
+%
+% Black letter fonts^^A
+%^^A%%
+%   \footnote{See the great black letter fonts, which \person{Yannis Haralambous}
+%   kindly provided, and the \package{oldgerm} and \package{yfonts} package~\cite{yfonts}
+%   as their \LaTeX\ interfaces.}
+%^^A%%
+% deserve some additional considerations. As stated in section~\ref{sec:typesetting},
+% the ligatures |ch|, |ck|, |sz|~(\cs{\ss}), and~|tz| have to remain unbroken in spaced out
+% \emph{Fraktur} text.  This may look strange at first glance, but you'll get used to it:
+%
+% \begin{example}
+% |\textfrak{\so{S{ch}u{tz}vorri{ch}tung}}|
+% \end{example}
+%
+% You already know that grouping keeps the |soul| mechanism from separating such ligatures.
+% This is quite important for |s:|, |a*|, and~|"a|. As hyphenation is stronger than
+% grouping, especially the |sz| may cause an error, if hyphenation happens to occur between
+% the letters |s| and~|z|. (\TeX\ hyphenates the German word |auszer| wrongly like
+% |aus-zer| instead of like |au-szer|, because the German hyphenation patterns
+% do, for good reason, not see |sz| as `\cs{\ss}'.) In such cases you can protect tokens with the
+% sequence e.\,g.~|\mbox{sz}| or a properly defined command. The \cs{\ss} command,
+% which is defined by the \package{yfonts} package, and similar commands will suffice as well.
+%
+%
+%
+%
+%
+%
+%
+% \subsection{Dirty tricks}
+% \label{sec:dirtytricks}
+%
+% Narrow columns are hard to set, because they don't allow much spacing
+% flexibility, hence long words often cause overfull boxes. A macro
+% could use \cs{\so} to insert stretchability between the single
+% characters. Table~\ref{tab:dirtytricks} shows some text typeset with such
+% a macro at the left side and under \emph{plain} conditions at
+% the right side, both with a width of~6\,pc.
+%
+% \def\sampletext{Some magazines and newspapers prefer this kind of spacing
+% because it reduces hyphenation problems to a minimum\<. Unfortunately\<, such
+% paragraphs aren't especially beautiful\<.}
+% \newbox\dirtytrick
+% \setbox\dirtytrick\vbox{
+% \batchmode     ^^A  we don't want to see all these overfull boxes ...
+% \leavevmode\hspace{0ptplus1fil}
+% \hbox{\parindent0pt\plainsetup\let\<\relax
+%   \vtop{\hsize6pc\raggedright\sampletext}\hskip1em
+%   \vtop{\hsize6pc\magstylepar\sampletext}\hskip1em
+%   \vtop{\hsize6pc\sampletext}\hss}
+% \errorstopmode}
+%
+% \begin{table}
+% \begin{center}
+% \overfullrule5pt
+% \usebox\dirtytrick
+% \caption{Ragged-right, magazine style (using \soul), and block-aligned
+%          in comparison. But, frankly, none of them is really acceptable.
+%          (Don't do this at home, children!)}
+% \label{tab:dirtytricks}
+% \end{center}
+% \end{table}
+%
+%
+%
+%
+%
+%
+%
+% \section{\texorpdfstring{\ul{Underlining}}{Underlining}}
+%
+% The underlining macros are my answer to Prof.~\person{Knuth'{\normalfont s}}
+% exercise 18.26 from his \TeX{}book~\cite{DEK}. \texttt{:-)} Most of what
+% is said about the macro \describemacro{\ul} is also true of the
+% striking out macro \describemacro{\st} and the highlighting macro \describemacro{\hl},
+% both of which are in fact derived from the former.
+%
+%
+%
+%
+% \subsection{Settings}
+%
+% \subsubsection{Underline depth and thickness}
+%
+% The predefined \syn{underline depth} and \syn{thickness}
+% work well with most fonts. They can be changed using the macro \describemacro{\setul}.
+%
+% \begin{syntax}
+% |\setul{|\<underline depth>|}{|\<underline thickness>|}|
+% \end{syntax}
+%
+% Either dimension can be omitted, in which case there has to be
+% an empty pair of braces.
+% Both values should be defined in terms of |ex|, letting them
+% grow and shrink with the respective fonts.
+% The \describemacro{\resetul} command restores the standard values.
+%
+% Another way to set the \syn{underline depth} is to use the macro
+% \describemacro{\setuldepth}. It sets the depth such that the
+% underline's upper edge lies 1\,pt beneath the given argument's
+% deepest depth. If the argument is empty, all
+% letters---i.\,e.\ all characters whose \cs{\catcode} currentl

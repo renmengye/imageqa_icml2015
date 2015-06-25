@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: imageqa_icml2015.aux
 The style file: icml2015.bst
 Database file #1: Reference.bib
-You've used 19 entries,
+You've used 32 entries,
             2773 wiz_defined-function locations,
-            697 strings with 8462 characters,
-and the built_in function-call counts, 9792 in all, are:
-= -- 830
-> -- 682
-< -- 13
-+ -- 230
-- -- 210
-* -- 787
-:= -- 1510
-add.period$ -- 64
-call.type$ -- 19
-change.case$ -- 125
-chr.to.int$ -- 18
-cite$ -- 38
-duplicate$ -- 443
-empty$ -- 746
-format.name$ -- 241
-if$ -- 2058
+            732 strings with 9649 characters,
+and the built_in function-call counts, 16090 in all, are:
+= -- 1250
+> -- 1315
+< -- 10
++ -- 441
+- -- 408
+* -- 1356
+:= -- 2556
+add.period$ -- 97
+call.type$ -- 32
+change.case$ -- 230
+chr.to.int$ -- 31
+cite$ -- 64
+duplicate$ -- 709
+empty$ -- 1203
+format.name$ -- 454
+if$ -- 3301
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 19
-newline$ -- 110
-num.names$ -- 77
-pop$ -- 265
+missing$ -- 33
+newline$ -- 169
+num.names$ -- 129
+pop$ -- 517
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 200
 quote$ -- 0
-skip$ -- 364
+skip$ -- 535
 stack$ -- 0
-substring$ -- 224
-swap$ -- 69
-text.length$ -- 4
+substring$ -- 145
+swap$ -- 53
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 199
+type$ -- 342
 warning$ -- 0
-while$ -- 73
+while$ -- 102
 width$ -- 0
-write$ -- 262
+write$ -- 404

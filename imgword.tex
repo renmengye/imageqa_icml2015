@@ -30,17 +30,23 @@
 \path (3.5,1.5) node[draw=none] (lstm1) {LSTM};
 \draw (7, -0.5) rectangle (14, 0);
 
-\draw (11,3) rectangle (14,4);
-\draw[fill=red] (11.5,3.5) circle (0.2cm);
+\draw (9,3) rectangle (14,4);
+\draw(9.5,3.5) circle (0.2cm);
+\draw [fill=red] (10.5,3.5) circle (0.2cm);
+\path (11.5,3.5) node[draw=none] {...};
 \draw (12.5,3.5) circle (0.2cm);
 \draw (13.5,3.5) circle (0.2cm);
-\path (10,3.5) node[draw=none] (logit) {softmax};
-\path (11.5,4.5) node[draw=none] (logit2) {two};
-\path (12.5,4.5) node[draw=none] (logit3) {three};
-\path (13.5,4.5) node[draw=none] (logit5) {five};
-\path (11.5,5) node[draw=none] (logit2) {.56};
-\path (12.5,5) node[draw=none] (logit3) {.21};
-\path (13.5,5) node[draw=none] (logit5) {.09};
+\path (8,3.5) node[draw=none] {softmax};
+\path (9.5,4.5) node[draw=none] {one};
+\path (10.5,4.5) node[draw=none] {two};
+\path (11.5,4.5) node[draw=none] {...};
+\path (12.5,4.5) node[draw=none] {red};
+\path (13.5,4.5) node[draw=none] {bird};
+\path (9.5,5) node[draw=none] {.21};
+\path (10.5,5) node[draw=none] {.56};
+\path (11.5,5) node[draw=none] {...};
+\path (12.5,5) node[draw=none] {.09};
+\path (13.5,5) node[draw=none] {.01};
 \draw [-latex] (13.5,2) -- (13.5,3);
 
 \draw (4,-0.5) rectangle (6.5, 0);
