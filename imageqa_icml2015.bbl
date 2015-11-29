@@ -128,20 +128,18 @@ Ma, Lin, Lu, Zhengdong, and Li, Hang.
   network.
 \newblock \emph{CoRR}, abs/1506.00333, 2015.
 
-\bibitem[Malinowski \& Fritz(2014{\natexlab{a}})Malinowski and
-  Fritz]{malinowski14a}
+\bibitem[Malinowski \& Fritz(2014{\natexlab{a}})Malinowski and Fritz]{mal14a}
 Malinowski, Mateusz and Fritz, Mario.
 \newblock Towards a visual turing challenge.
 \newblock In \emph{NIPS Workshop on Learning Semantics}, 2014{\natexlab{a}}.
 
-\bibitem[Malinowski \& Fritz(2014{\natexlab{b}})Malinowski and
-  Fritz]{malinowski14b}
+\bibitem[Malinowski \& Fritz(2014{\natexlab{b}})Malinowski and Fritz]{mal14b}
 Malinowski, Mateusz and Fritz, Mario.
 \newblock A multi-world approach to question answering about real-world scenes
   based on uncertain input.
 \newblock In \emph{NIPS}, 2014{\natexlab{b}}.
 
-\bibitem[Malinowski et~al.(2015)Malinowski, Rohrbach, and Fritz]{malinowski15}
+\bibitem[Malinowski et~al.(2015)Malinowski, Rohrbach, and Fritz]{mal15}
 Malinowski, Mateusz, Rohrbach, Marcus, and Fritz, Mario.
 \newblock {Ask Your Neurons: A Neural-based Approach to Answering Questions
   about Images}.

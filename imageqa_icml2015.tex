@@ -215,17 +215,17 @@ makes the evaluation of the models easier and more robust, avoiding the thorny
 evaluation issues that plague multi-word generation problems.
 
 \section{Related Work}
-\shortcite{malinowski14a} released a dataset with images and question-answer
-pairs, the DAtaset for QUestion Answering on Real-world images (DAQUAR). All
-images are from the NYU depth v2 dataset \cite{silberman12}, and are taken
-from indoor scenes. Human segmentations, image depth values, and object
-labellings are available in the dataset. The QA data has two sets of
-configurations, which differ by the number of object classes appearing 
-in the questions (37-class and 894-class). There are mainly three types 
-of questions in this dataset: object  type, object color, and number of 
-objects. Some questions are easy but many questions are very hard to answer 
-even for humans. Since DAQUAR is the only publicly available image-based QA 
-dataset, it is one of our benchmarks to evaluate our models.
+\shortcite{mal14a} released a dataset with images and question-answer pairs, 
+the DAtaset for QUestion Answering on Real-world images (DAQUAR). All images 
+are from the NYU depth v2 dataset \cite{silberman12}, and are taken from indoor 
+scenes. Human segmentations, image depth values, and object labellings are 
+available in the dataset. The QA data has two sets of configurations, which 
+differ by the number of object classes appearing in the questions (37-class and 
+894-class). There are mainly three types of questions in this dataset: object 
+type, object color, and number of objects. Some questions are easy but many 
+questions are very hard to answer even for humans. Since DAQUAR is the only 
+publicly available image-based QA dataset, it is one of our benchmarks to 
+evaluate our models.
 
 Together with the release of the DAQUAR dataset, Malinowski et al. presented 
 an approach which combines semantic parsing and image segmentation. In the 
@@ -247,25 +247,24 @@ is not very strong. We will show later that some simple baselines will perform
 better in terms of plain accuracy.
 
 Very recently there has been a number of parallel efforts on both 
-creating datasets and proposing new models \cite{antol14, malinowski15, gao15, 
-ma15}. Both \shortcite{antol14} and \shortcite{gao15} used MS-COCO 
-\cite{mscoco} images and created an open domain dataset with human generated 
-questions and answers. In Anto et al.'s work, the authors also included cartoon 
-pictures besides real images. Some questions require logical reasoning in order 
-to answer correctly.
+creating datasets and proposing new models \cite{antol14, mal15, gao15, ma15}. 
+Both \shortcite{antol14} and \shortcite{gao15} used MS-COCO \cite{mscoco} 
+images and created an open domain dataset with human generated questions and 
+answers. In Anto et al.'s work, the authors also included cartoon pictures 
+besides real images. Some questions require logical reasoning in order to 
+answer correctly.
 
-Both \shortcite{malinowski15} and \shortcite{gao15} use recurrent networks to 
-encode the sentence and output the answer. Whereas Malinowski et al. use a 
-single network to handle both encoding and decoding, Gao et al. used two 
-networks, a separate encoder and decoder. Lastly, bilingual (Chinese and 
-English) versions of the QA dataset are available in Gao et al.'s work. 
-\shortcite{ma15} used convolutional neural networks (CNNs) to both extract 
-image features and sentence features, and fuse the features together with 
-another multi-modal CNN. 
+Both \shortcite{mal15} and \shortcite{gao15} use recurrent networks to encode 
+the sentence and output the answer. Whereas Malinowski et al. use a single 
+network to handle both encoding and decoding, Gao et al. used two networks, a 
+separate encoder and decoder. Lastly, bilingual (Chinese and English) versions 
+of the QA dataset are available in Gao et al.'s work. \shortcite{ma15} used 
+convolutional neural networks (CNNs) to both extract image features and 
+sentence features, and fuse the features together with another multi-modal CNN. 
 
 Our approach is developed independently from the work above. Similar to the 
-work of \shortcite{malinowski15}and \shortcite{gao15}, we also experimented 
-with recurrent networks to consume the sequential question input. Unlike 
+work of \shortcite{mal15} and \shortcite{gao15}, we also experimented with 
+recurrent networks to consume the sequential question input. Unlike 
 \shortcite{gao15},we formulate the task as a classification problem, as there 
 is no single well-accepted metric to evaluate sentence-form answer accuracy 
 \cite{chen15}. Thus, we place more focus on a limited domain of questions that 
@@ -514,16 +513,16 @@ this empirical distribution.
 
 \subsection{Performance Metrics}
 To evaluate model performance, we used the plain answer accuracy as well as 
-the Wu-Palmer similarity (WUPS) measure \cite{wu94, malinowski14b}. 
-The WUPS calculates the similarity between two words based 
-on their longest common subsequence in the taxonomy tree. If the similarity 
-between two words is less than a threshold then a score of zero will be given 
-to the candidate answer. Following \shortcite{malinowski14b}, 
-we measure all the models in terms of accuracy, WUPS 0.9, and WUPS 0.0.
+the Wu-Palmer similarity (WUPS) measure \cite{wu94, mal14b}. The WUPS 
+calculates the similarity between two words based on their longest common 
+subsequence in the taxonomy tree. If the similarity between two words is less 
+than a threshold then a score of zero will be given to the candidate answer. 
+Following \shortcite{mal14b}, we measure all the models in terms of accuracy, 
+WUPS 0.9, and WUPS 0.0.
 
 \subsection{Results and Analysis}
 Table~\ref{tab:daquar_results} summarizes the learning results on DAQUAR. Here
-we compare our results with \cite{malinowski14b} and \cite{malinowski15}. 
+we compare our results with \cite{mal14b} and \cite{mal15}. 
 It should be noted that our result is for the 98.3\% of 
 the reduced dataset with single-word answers.
 
@@ -536,24 +535,24 @@ the reduced dataset with single-word answers.
 \begin{sc}
 \begin{tabular}{c | c c c | c c c}
 \hline     
-                     &          &  DAQUAR  &          &          &  COCO-QA &          \\
-                     & Acc.     & WUPS 0.9 & WUPS 0.0 & Acc.     & WUPS 0.9 & WUPS 0.0 \\
+             &          &  DAQUAR  &          &          &  COCO-QA &          \\
+             & Acc.     & WUPS 0.9 & WUPS 0.0 & Acc.     & WUPS 0.9 & WUPS 0.0 \\
 \hline         
-MULTI-WORLD          &  0.1273  &  0.1810  &  0.5147  &  -       &  -       &  -       \\
-\cite{malinowski14b} &          &          &          &          &          &          \\
-GUESS                &  0.1824  &  0.2965  &  0.7759  &  0.0665  &  0.1742  &  0.7344  \\
-BOW                  &  0.3267  &  0.4319  &  0.8130  &  0.3752  &  0.4854  &  0.8278  \\
-LSTM                 &  0.3273  &  0.4350  &  0.8162  &  0.3676  &  0.4758  &  0.8234  \\
-IMG                  &  -       &  -       &  -       &  0.4302  &  0.5864  &  0.8585  \\
-IMG+PRIOR            &  -       &  -       &  -       &  0.4466  &  0.6020  &  0.8624  \\
-IMG+BOW              &  0.3417  &  0.4499  &  0.8148  &\*{0.5592}&\*{0.6678}&\*{0.8899}\\
-VIS+LSTM             &  0.3441  &  0.4605  &\*{0.8223}&  0.5331  &  0.6391  & 0.8825   \\
-ASK-NEURON           &  0.3468  &  0.4076  & 0.7954   &  -       &  -       &  -       \\
-\cite{malinowski15}  &          &          &          &          &          &          \\
-2-VIS+BLSTM          &\*{0.3578}&\*{0.4683}& 0.8215   &  0.5509  &  0.6534  & 0.8864   \\
-FULL                 &\*{0.3694}&\*{0.4815}&\*{0.8268}&\*{0.5784}&\*{0.6790}&\*{0.8952}\\
+MULTI-WORLD  &  0.1273  &  0.1810  &  0.5147  &  -       &  -       &  -       \\
+\cite{mal14b}&          &          &          &          &          &          \\
+GUESS        &  0.1824  &  0.2965  &  0.7759  &  0.0665  &  0.1742  &  0.7344  \\
+BOW          &  0.3267  &  0.4319  &  0.8130  &  0.3752  &  0.4854  &  0.8278  \\
+LSTM         &  0.3273  &  0.4350  &  0.8162  &  0.3676  &  0.4758  &  0.8234  \\
+IMG          &  -       &  -       &  -       &  0.4302  &  0.5864  &  0.8585  \\
+IMG+PRIOR    &  -       &  -       &  -       &  0.4466  &  0.6020  &  0.8624  \\
+IMG+BOW      &  0.3417  &  0.4499  &  0.8148  &\*{0.5592}&\*{0.6678}&\*{0.8899}\\
+VIS+LSTM     &  0.3441  &  0.4605  &\*{0.8223}&  0.5331  &  0.6391  & 0.8825   \\
+ASK-NEURON   &  0.3468  &  0.4076  & 0.7954   &  -       &  -       &  -       \\
+\cite{mal15} &          &          &          &          &          &          \\
+2-VIS+BLSTM  &\*{0.3578}&\*{0.4683}& 0.8215   &  0.5509  &  0.6534  & 0.8864   \\
+FULL         &\*{0.3694}&\*{0.4815}&\*{0.8268}&\*{0.5784}&\*{0.6790}&\*{0.8952}\\
 \hline
-HUMAN                &  0.6027  &  0.6104  &  0.7896  &  -       &  -       &  -       \\
+HUMAN        &  0.6027  &  0.6104  &  0.7896  &  -       &  -       &  -       \\
 \hline
 \end{tabular}
 \end{sc}
@@ -594,7 +593,7 @@ FULL       &\*{0.6108} &\*{0.4766}&   0.5148  &\*{0.5028}\\
 
 From the above results we observe that our model outperforms the baselines and
 the existing approach in terms of answer accuracy and WUPS. Our VIS+LSTM and 
-\shortcite{malinowski15}'s recurrent neural network model achieved somewhat 
+\shortcite{mal15}'s recurrent neural network model achieved somewhat 
 similar performance on DAQUAR. It is surprising to see that IMG+BOW model is 
 very strong on both dataset. One limitation of our VIS+LSTM model is that we 
 are not able to consume image features as large as 4096 dimensions at one time 
